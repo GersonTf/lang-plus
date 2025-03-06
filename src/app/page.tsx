@@ -3,8 +3,6 @@
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { FaTwitter } from "react-icons/fa";
-import { SiXiaohongshu } from "react-icons/si";
 
 const HomePage: React.FC = () => {
   return (
@@ -18,10 +16,6 @@ const HomePage: React.FC = () => {
         <meta
           name="keywords"
           content="language classes, English lessons, Spanish lessons, language learning, language teacher, personalized lessons"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
         />
       </Head>
       <main style={{
@@ -282,56 +276,6 @@ const HomePage: React.FC = () => {
             color: "#64748b",
             borderTop: "1px solid #e2e8f0",
           }}>
-            {/* Social Media Links - Uncomment and add URLs when ready
-            <div style={{ marginBottom: "1.5rem" }}>
-              <a
-                href="[Your Twitter URL]"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "#3b82f6",
-                  margin: "0 0.75rem",
-                  fontSize: "1.5rem",
-                  textDecoration: "none",
-                  display: "inline-block",
-                  transition: "all 0.2s ease",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.color = "#2563eb";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.color = "#3b82f6";
-                }}
-              >
-                <FaTwitter />
-              </a>
-              <a
-                href="[Your Xiaohongshu URL]"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "#3b82f6",
-                  margin: "0 0.75rem",
-                  fontSize: "1.5rem",
-                  textDecoration: "none",
-                  display: "inline-block",
-                  transition: "all 0.2s ease",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.color = "#2563eb";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.color = "#3b82f6";
-                }}
-              >
-                <SiXiaohongshu />
-              </a>
-            </div>
-            */}
             <p style={{ marginBottom: "0.5rem" }}>
               Contact us at{" "}
               <a href="mailto:andy@a-plus-languages.com" style={{ 
