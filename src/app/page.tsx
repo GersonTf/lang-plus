@@ -1,53 +1,30 @@
 "use client"; // Add this line at the top
 
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { FaTwitter } from "react-icons/fa";
 import { SiXiaohongshu } from "react-icons/si";
 
 const HomePage: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically handle the form submission
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <>
       <Head>
-        <title>
-          Aplus English - Professional English Lessons
-        </title>
+        <title>Aplus Languages - Professional Language Lessons</title>
         <meta
           name="description"
-          content="Professional English lessons with Aplus English. Personalized classes for individuals and small groups. Improve your English with experienced teaching."
+          content="Professional language lessons with Aplus Languages. Personalized classes for individuals and small groups. Improve your English or Spanish with experienced teaching."
         />
         <meta
           name="keywords"
-          content="English classes, English lessons, language learning, English teacher, personalized English lessons"
+          content="language classes, English lessons, Spanish lessons, language learning, language teacher, personalized lessons"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </Head>
-      <div style={{ 
+      <main style={{
         backgroundColor: "#f8fafc",
         minHeight: "100vh",
         fontFamily: "'Inter', sans-serif"
@@ -84,13 +61,13 @@ const HomePage: React.FC = () => {
                 }}
               />
               <div style={{ fontSize: "1.5rem", fontWeight: "700", color: "#3b82f6" }}>
-                Aplus English
+                Aplus Languages
               </div>
             </div>
             <div style={{ display: "flex", gap: "2rem" }}>
               <a href="#about" style={{ color: "#475569", textDecoration: "none", fontWeight: "500", transition: "color 0.2s" }}>About</a>
               <a href="#classes" style={{ color: "#475569", textDecoration: "none", fontWeight: "500", transition: "color 0.2s" }}>Classes</a>
-              <a href="#contact" style={{ color: "#475569", textDecoration: "none", fontWeight: "500", transition: "color 0.2s" }}>Contact</a>
+              <a href="mailto:andy@a-plus-languages.com" style={{ color: "#475569", textDecoration: "none", fontWeight: "500", transition: "color 0.2s" }}>Contact</a>
             </div>
           </div>
         </nav>
@@ -147,7 +124,7 @@ const HomePage: React.FC = () => {
               lineHeight: "1.2",
               textShadow: "0 2px 4px rgba(0,0,0,0.1)",
             }}>
-              Professional English Classes
+              Professional Language Classes
             </h1>
             <p style={{ 
               fontSize: "1.25rem", 
@@ -155,7 +132,7 @@ const HomePage: React.FC = () => {
               marginBottom: "2rem",
               textShadow: "0 1px 2px rgba(0,0,0,0.1)",
             }}>
-              Personalized lessons to help you achieve your language goals
+              Personalized English and Spanish lessons to help you achieve your language goals
             </p>
             <a
               href="mailto:andy@a-plus-languages.com?subject=Inquiry%20about%20English%20Classes"
@@ -215,7 +192,7 @@ const HomePage: React.FC = () => {
               color: "#475569",
               lineHeight: "1.6",
             }}>
-              With years of experience teaching English, we specialize in helping students achieve their language goals through personalized, engaging lessons. Our proven methodology and experienced teachers ensure the best learning experience for every student.
+              With years of experience teaching languages, we specialize in helping students achieve their goals through personalized, engaging lessons. Our proven methodology and experienced teachers ensure the best learning experience for every student.
             </p>
           </section>
 
@@ -297,171 +274,6 @@ const HomePage: React.FC = () => {
             </p>
           </section>
 
-          {/* Contact Section */}
-          <section id="contact" style={{
-            margin: "2rem 0",
-            padding: "2rem",
-            borderRadius: "16px",
-            backgroundColor: "white",
-            boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
-          }}>
-            <h2 style={{ 
-              fontSize: "2rem", 
-              color: "#3b82f6",
-              marginBottom: "2rem",
-              fontWeight: "700",
-            }}>
-              Contact Us
-            </h2>
-            <form onSubmit={handleSubmit} style={{ 
-              display: "flex", 
-              flexDirection: "column", 
-              gap: "1.5rem",
-              maxWidth: "600px",
-            }}>
-              <div>
-                <label htmlFor="name" style={{ 
-                  display: "block", 
-                  marginBottom: "0.5rem", 
-                  color: "#475569",
-                  fontWeight: "500",
-                }}>
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "0.75rem",
-                    borderRadius: "8px",
-                    border: "1px solid #e2e8f0",
-                    fontSize: "1rem",
-                    transition: "all 0.2s ease",
-                    backgroundColor: "#f8fafc",
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = "#3b82f6";
-                    e.target.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.1)";
-                    e.target.style.backgroundColor = "white";
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = "#e2e8f0";
-                    e.target.style.boxShadow = "none";
-                    e.target.style.backgroundColor = "#f8fafc";
-                  }}
-                />
-              </div>
-              <div>
-                <label htmlFor="email" style={{ 
-                  display: "block", 
-                  marginBottom: "0.5rem", 
-                  color: "#475569",
-                  fontWeight: "500",
-                }}>
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "0.75rem",
-                    borderRadius: "8px",
-                    border: "1px solid #e2e8f0",
-                    fontSize: "1rem",
-                    transition: "all 0.2s ease",
-                    backgroundColor: "#f8fafc",
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = "#3b82f6";
-                    e.target.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.1)";
-                    e.target.style.backgroundColor = "white";
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = "#e2e8f0";
-                    e.target.style.boxShadow = "none";
-                    e.target.style.backgroundColor = "#f8fafc";
-                  }}
-                />
-              </div>
-              <div>
-                <label htmlFor="message" style={{ 
-                  display: "block", 
-                  marginBottom: "0.5rem", 
-                  color: "#475569",
-                  fontWeight: "500",
-                }}>
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={4}
-                  style={{
-                    width: "100%",
-                    padding: "0.75rem",
-                    borderRadius: "8px",
-                    border: "1px solid #e2e8f0",
-                    fontSize: "1rem",
-                    resize: "vertical",
-                    transition: "all 0.2s ease",
-                    backgroundColor: "#f8fafc",
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = "#3b82f6";
-                    e.target.style.boxShadow = "0 0 0 3px rgba(59,130,246,0.1)";
-                    e.target.style.backgroundColor = "white";
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = "#e2e8f0";
-                    e.target.style.boxShadow = "none";
-                    e.target.style.backgroundColor = "#f8fafc";
-                  }}
-                />
-              </div>
-              <button
-                type="submit"
-                style={{
-                  padding: "1rem 2rem",
-                  backgroundColor: "#3b82f6",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "8px",
-                  fontSize: "1rem",
-                  fontWeight: "600",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                  boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-                  alignSelf: "flex-start",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = "#2563eb";
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                  e.currentTarget.style.boxShadow = "0 8px 12px rgba(0,0,0,0.15)";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = "#3b82f6";
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
-                }}
-              >
-                Send Message
-              </button>
-            </form>
-          </section>
-
           {/* Footer */}
           <footer style={{
             textAlign: "center",
@@ -470,6 +282,7 @@ const HomePage: React.FC = () => {
             color: "#64748b",
             borderTop: "1px solid #e2e8f0",
           }}>
+            {/* Social Media Links - Uncomment and add URLs when ready
             <div style={{ marginBottom: "1.5rem" }}>
               <a
                 href="[Your Twitter URL]"
@@ -518,6 +331,7 @@ const HomePage: React.FC = () => {
                 <SiXiaohongshu />
               </a>
             </div>
+            */}
             <p style={{ marginBottom: "0.5rem" }}>
               Contact us at{" "}
               <a href="mailto:andy@a-plus-languages.com" style={{ 
@@ -532,12 +346,12 @@ const HomePage: React.FC = () => {
               </a>
             </p>
             <p>
-              &copy; {new Date().getFullYear()} Aplus English. All rights
+              &copy; {new Date().getFullYear()} Aplus Languages. All rights
               reserved.
             </p>
           </footer>
         </main>
-      </div>
+      </main>
     </>
   );
 };
