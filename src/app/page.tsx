@@ -429,6 +429,42 @@ const HomePage: React.FC = () => {
             width: "100%",
             boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
           }}>
+            {/* Trust Indicators */}
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "2rem",
+              marginBottom: "2rem",
+              flexWrap: "wrap",
+            }}>
+              {[
+                { number: "10+", label: "Years Experience" },
+                { number: "1000+", label: "Students Taught" },
+                { number: "4.9/5", label: "Student Rating" },
+              ].map((stat, index) => (
+                <div key={index} style={{
+                  textAlign: "center",
+                }}>
+                  <div style={{
+                    fontSize: "1.5rem",
+                    fontWeight: "700",
+                    color: "#3b82f6",
+                    marginBottom: "0.5rem",
+                  }}>
+                    {stat.number}
+                  </div>
+                  <div style={{
+                    fontSize: "0.875rem",
+                    color: "#64748b",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.05em",
+                  }}>
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
             <h3 style={{
               fontSize: "1.5rem",
               color: "#3b82f6",
@@ -442,32 +478,51 @@ const HomePage: React.FC = () => {
               fontSize: "1.1rem",
               lineHeight: "1.6",
               maxWidth: "600px",
-              margin: "0 auto 1rem",
+              margin: "0 auto 1.5rem",
             }}>
-              Book your free consultation today and discover how my personalized approach can help you achieve your language goals.
+              Book your <strong>free consultation</strong> today and discover how my personalized approach can help you achieve your language goals. Limited spots available!
             </p>
-            <p style={{ 
-              color: "#475569",
-              fontSize: "1.1rem",
-              lineHeight: "1.6",
-              maxWidth: "600px",
-              margin: "0 auto",
+            <div style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "1rem",
             }}>
               <a
                 href="mailto:andy@a-plus-languages.com?subject=Class%20Inquiry"
+                onClick={handleEmailClick}
                 style={{ 
-                  color: "#3b82f6",
+                  display: "inline-block",
+                  padding: "1rem 2.5rem",
+                  backgroundColor: "#3b82f6",
+                  color: "white",
+                  borderRadius: "8px",
+                  fontWeight: "600",
                   textDecoration: "none",
-                  fontWeight: "500",
-                  transition: "color 0.2s",
+                  transition: "all 0.3s ease",
+                  boxShadow: "0 4px 6px rgba(59, 130, 246, 0.25)",
                 }}
-                onMouseOver={(e) => e.currentTarget.style.color = "#2563eb"}
-                onMouseOut={(e) => e.currentTarget.style.color = "#3b82f6"}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                  e.currentTarget.style.boxShadow = "0 6px 12px rgba(59, 130, 246, 0.3)";
+                  e.currentTarget.style.backgroundColor = "#2563eb";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "0 4px 6px rgba(59, 130, 246, 0.25)";
+                  e.currentTarget.style.backgroundColor = "#3b82f6";
+                }}
               >
-                Contact us
+                Schedule Free Consultation
               </a>
-              {" "}to schedule your free consultation and discuss your learning goals.
-            </p>
+              <p style={{
+                fontSize: "0.875rem",
+                color: "#64748b",
+                marginTop: "0.5rem",
+              }}>
+                ✓ No commitment required &nbsp;&nbsp; ✓ Flexible scheduling &nbsp;&nbsp; ✓ Personalized learning plan
+              </p>
+            </div>
           </div>
         </section>
 
