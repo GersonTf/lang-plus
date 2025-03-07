@@ -5,14 +5,14 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.apluslanguages.eu'),
-  title: 'Aplus Languages | Expert Online English & Spanish Classes',
-  description: 'Transform your language skills with personalized online English and Spanish lessons. Native speaker, certified teacher offering one-on-one, group, and business language training.',
-  keywords: 'online English classes, Spanish lessons, language learning, online tutoring, business English, ESL, language courses, virtual classes',
+  title: 'Aplus Languages | Clases de Inglés y Español Online con Profesor Nativo',
+  description: 'Aprende inglés y español online con un profesor nativo certificado. Clases particulares, grupales y para empresas. Primera clase de prueba gratis. Horarios flexibles.',
+  keywords: 'clases de inglés online, profesor de inglés nativo, clases de español online, cursos de idiomas, clases particulares de inglés, business english, english teacher, spanish teacher, clases de conversación',
   manifest: '/manifest.json',
   themeColor: '#3b82f6',
   openGraph: {
-    title: 'Aplus Languages | Expert Online English & Spanish Classes',
-    description: 'Transform your language skills with personalized online English and Spanish lessons from a certified native speaker.',
+    title: 'Aplus Languages | Clases de Inglés y Español Online con Profesor Nativo',
+    description: 'Aprende inglés y español online con un profesor nativo certificado. Metodología probada, clases personalizadas y horarios flexibles.',
     url: 'https://www.aplus-languages.com',
     siteName: 'Aplus Languages',
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     initialScale: 1,
   },
   verification: {
-    google: 'your-google-verification-code', // Add your Google verification code
+    google: 'REPLACE-THIS-WITH-YOUR-GOOGLE-VERIFICATION-CODE', // Get this code from Google Search Console: https://search.google.com/search-console
   },
   alternates: {
     canonical: 'https://www.aplus-languages.com',
