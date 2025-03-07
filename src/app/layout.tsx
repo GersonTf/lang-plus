@@ -1,22 +1,21 @@
-import { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import type { Metadata } from 'next'
+import './globals.css'
+import JsonLd from './components/JsonLd'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.apluslanguages.eu'),
   title: {
-    template: '%s | Aplus Languages',
-    default: 'Aplus Languages - Expert Online English & Spanish Language Classes',
+    template: '%s | A+ Languages',
+    default: 'A+ Languages - Online Language Learning',
   },
-  description: 'Transform your language skills with personalized online English and Spanish lessons from native-speaking teachers. Learn from anywhere in the world.',
-  keywords: ['online language classes', 'English lessons', 'Spanish lessons', 'language learning', 'online tutoring', 'ESL', 'language teacher'],
+  description: 'Learn languages online with personalized lessons from expert teachers. Flexible scheduling and tailored curriculum for all levels.',
+  keywords: ['language learning', 'online classes', 'language courses', 'professional teachers', 'flexible schedule'],
   alternates: {
-    canonical: 'https://www.apluslanguages.eu'
+    canonical: '/',
   },
-  authors: [{ name: 'Aplus Languages' }],
-  creator: 'Aplus Languages',
-  publisher: 'Aplus Languages',
+  authors: [{ name: 'A+ Languages Team' }],
+  creator: 'A+ Languages',
+  publisher: 'A+ Languages',
   formatDetection: {
     email: false,
     address: false,
@@ -26,37 +25,30 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.apluslanguages.eu',
-    title: 'Aplus Languages - Expert Online English & Spanish Language Classes',
-    description: 'Transform your language skills with personalized online English and Spanish lessons from native-speaking teachers.',
-    siteName: 'Aplus Languages',
+    title: 'A+ Languages - Online Language Learning',
+    description: 'Learn languages online with personalized lessons from expert teachers. Flexible scheduling and tailored curriculum for all levels.',
+    siteName: 'A+ Languages',
     images: [
       {
-        url: '/images/aplusenglishLogo.jpg',
-        width: 600,
-        height: 600,
-        alt: 'Aplus Languages Logo',
-      },
+        url: 'https://www.apluslanguages.eu/og-image.jpg', // Update with your actual OG image
+        width: 1200,
+        height: 630,
+        alt: 'A+ Languages',
+      }
     ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Aplus Languages - Expert Online English & Spanish Language Classes',
-    description: 'Transform your language skills with personalized online English and Spanish lessons.',
-    images: ['/images/aplusenglishLogo.jpg'],
   },
   robots: {
     index: true,
     follow: true,
-    nocache: true,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
       'max-image-preview': 'large',
+      'max-video-preview': -1,
       'max-snippet': -1,
     },
   },
-  category: 'education'
+  category: 'education',
 }
 
 export default function RootLayout({
@@ -66,7 +58,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        {children}
+        <JsonLd />
+      </body>
     </html>
   )
 }
