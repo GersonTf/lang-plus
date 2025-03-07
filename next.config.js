@@ -14,18 +14,37 @@ const nextConfig = {
     // ssr and displayName are configured by default
     styledComponents: false,
   },
+  // Add header configuration for global caching rules
   async headers() {
     return [
       {
-        source: '/sitemap.xml',
+        source: '/:path*',
         headers: [
           {
-            key: 'Content-Type',
-            value: 'application/xml',
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on',
           },
           {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          }
+        ],
+      },
+      // Apply extremely strong no-cache headers to sitemap and robots
+      {
+        source: '/(sitemap.xml|robots.txt)',
+        headers: [
+          {
             key: 'Cache-Control',
-            value: 'public, max-age=3600',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          },
+          {
+            key: 'Pragma',
+            value: 'no-cache',
+          },
+          {
+            key: 'Expires',
+            value: '0',
           },
         ],
       },
