@@ -10,74 +10,86 @@ const HomePage: React.FC = () => {
       minHeight: "100vh",
       fontFamily: "'Inter', sans-serif",
       scrollBehavior: "smooth",
-    }}>
+    }}
+    role="main"
+    aria-label="Main content">
       {/* Navigation */}
-      <nav style={{
-        backgroundColor: "#ffffff",
-        padding: "clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem)",
-        boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
-        position: "sticky",
-        top: 0,
-        zIndex: 1000,
-      }}>
-        <div style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "1rem",
-        }}>
-          <div style={{ 
-            display: "flex", 
-            alignItems: "center", 
+      <header>
+        <nav style={{
+          backgroundColor: "#ffffff",
+          padding: "clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem)",
+          boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+          position: "sticky",
+          top: 0,
+          zIndex: 1000,
+        }}
+        role="navigation"
+        aria-label="Main navigation">
+          <div style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexWrap: "wrap",
             gap: "1rem",
           }}>
-            <Image
-              src="/images/aplusenglishLogo.jpg"
-              alt="Aplus Languages Logo"
-              width={40}
-              height={40}
-              style={{ 
-                borderRadius: "8px",
-                objectFit: "cover",
-              }}
-            />
             <div style={{ 
-              fontSize: "clamp(1.2rem, 4vw, 1.5rem)", 
-              fontWeight: "700", 
-              color: "#3b82f6" 
+              display: "flex", 
+              alignItems: "center", 
+              gap: "1rem",
             }}>
-              Aplus Languages
+              <Image
+                src="/images/aplusenglishLogo.jpg"
+                alt="Aplus Languages Logo"
+                width={40}
+                height={40}
+                style={{ 
+                  borderRadius: "8px",
+                  objectFit: "cover",
+                }}
+                priority
+              />
+              <div style={{ 
+                fontSize: "clamp(1.2rem, 4vw, 1.5rem)", 
+                fontWeight: "700", 
+                color: "#3b82f6" 
+              }}
+              role="heading"
+              aria-level={1}>
+                Aplus Languages
+              </div>
             </div>
+            <nav style={{ display: "flex", gap: "clamp(1rem, 3vw, 2rem)" }}
+                 role="navigation"
+                 aria-label="Section navigation">
+              {["About", "Classes", "Contact"].map((item, index) => (
+                <a
+                  key={index}
+                  href={item === "Contact" ? "mailto:andy@a-plus-languages.com" : `#${item.toLowerCase()}`}
+                  style={{
+                    color: "#475569",
+                    textDecoration: "none",
+                    fontWeight: "500",
+                    transition: "all 0.2s ease",
+                    position: "relative",
+                    padding: "0.5rem 0",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.color = "#3b82f6";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.color = "#475569";
+                  }}
+                  aria-label={`Navigate to ${item} section`}
+                >
+                  {item}
+                </a>
+              ))}
+            </nav>
           </div>
-          <div style={{ display: "flex", gap: "clamp(1rem, 3vw, 2rem)" }}>
-            {["About", "Classes", "Contact"].map((item, index) => (
-              <a
-                key={index}
-                href={item === "Contact" ? "mailto:andy@a-plus-languages.com" : `#${item.toLowerCase()}`}
-                style={{
-                  color: "#475569",
-                  textDecoration: "none",
-                  fontWeight: "500",
-                  transition: "all 0.2s ease",
-                  position: "relative",
-                  padding: "0.5rem 0",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.color = "#3b82f6";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.color = "#475569";
-                }}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
       {/* Hero Section */}
       <section style={{
@@ -91,7 +103,9 @@ const HomePage: React.FC = () => {
         height: "auto",
         display: "flex",
         alignItems: "center",
-      }}>
+      }}
+      role="banner"
+      aria-label="Hero section">
         {/* Background Image */}
         <div style={{
           position: "absolute",
@@ -175,6 +189,7 @@ const HomePage: React.FC = () => {
               e.currentTarget.style.transform = "translateY(0)";
               e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
             }}
+            aria-label="Email us to inquire about English classes"
           >
             Email Us
           </a>
@@ -195,8 +210,10 @@ const HomePage: React.FC = () => {
           boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
           maxWidth: "900px",
           marginInline: "auto",
-        }}>
-          <h2 style={{ 
+        }}
+        role="region"
+        aria-labelledby="about-heading">
+          <h2 id="about-heading" style={{ 
             fontSize: "2rem", 
             color: "#3b82f6",
             marginBottom: "1.5rem",
@@ -249,8 +266,10 @@ const HomePage: React.FC = () => {
           boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
           maxWidth: "900px",
           marginInline: "auto",
-        }}>
-          <h2 style={{ 
+        }}
+        role="region"
+        aria-labelledby="classes-heading">
+          <h2 id="classes-heading" style={{ 
             fontSize: "2rem", 
             color: "#3b82f6",
             marginBottom: "2rem",
@@ -301,6 +320,8 @@ const HomePage: React.FC = () => {
                 boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
                 width: "100%",
               }}
+              role="article"
+              aria-labelledby={`class-title-${index}`}
               onMouseOver={(e) => {
                 e.currentTarget.style.transform = "translateY(-5px)";
                 e.currentTarget.style.boxShadow = "0 8px 16px rgba(0,0,0,0.1)";
@@ -314,10 +335,12 @@ const HomePage: React.FC = () => {
                 <div style={{
                   fontSize: "2.5rem",
                   marginBottom: "0.5rem",
-                }}>
+                }}
+                role="img"
+                aria-label={`${classType.title} icon`}>
                   {classType.icon}
                 </div>
-                <h3 style={{ 
+                <h3 id={`class-title-${index}`} style={{ 
                   fontSize: "1.25rem", 
                   color: "#3b82f6",
                   fontWeight: "600",
@@ -396,17 +419,21 @@ const HomePage: React.FC = () => {
           padding: "clamp(1rem, 3vw, 1.5rem)",
           color: "#64748b",
           borderTop: "1px solid #e2e8f0",
-        }}>
+        }}
+        role="contentinfo"
+        aria-label="Site footer">
           <p style={{ marginBottom: "0.5rem" }}>
             Contact us at{" "}
-            <a href="mailto:andy@a-plus-languages.com" style={{ 
-              color: "#3b82f6",
-              textDecoration: "none",
-              fontWeight: "500",
-              transition: "color 0.2s",
-            }}
-            onMouseOver={(e) => e.currentTarget.style.color = "#2563eb"}
-            onMouseOut={(e) => e.currentTarget.style.color = "#3b82f6"}>
+            <a href="mailto:andy@a-plus-languages.com" 
+               style={{ 
+                 color: "#3b82f6",
+                 textDecoration: "none",
+                 fontWeight: "500",
+                 transition: "color 0.2s",
+               }}
+               aria-label="Send email to andy@a-plus-languages.com"
+               onMouseOver={(e) => e.currentTarget.style.color = "#2563eb"}
+               onMouseOut={(e) => e.currentTarget.style.color = "#3b82f6"}>
               andy@a-plus-languages.com
             </a>
           </p>
