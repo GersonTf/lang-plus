@@ -1,3 +1,6 @@
 {
-  "workbench.colorTheme": "Visual Studio Dark"
+  "workbench.colorTheme": "Visual Studio Dark",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
 }
