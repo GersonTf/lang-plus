@@ -8,20 +8,30 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Aplus Languages - Professional Language Lessons</title>
+        <title>Aplus Languages - Professional English & Spanish Language Lessons in Seattle</title>
         <meta
           name="description"
-          content="Professional language lessons with Aplus Languages. Personalized classes for individuals and small groups. Improve your English or Spanish with experienced teaching."
+          content="Expert English and Spanish language lessons in Seattle. Personalized one-on-one classes, small group sessions, and business language training. Native-speaking teachers with proven teaching methods."
         />
         <meta
           name="keywords"
-          content="language classes, English lessons, Spanish lessons, language learning, language teacher, personalized lessons"
+          content="language classes Seattle, English lessons Seattle, Spanish lessons Seattle, business English, conversational Spanish, private language tutor, language learning, ESL classes, Spanish classes, online language lessons, in-person language classes"
         />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Aplus Languages - Professional Language Lessons in Seattle" />
+        <meta property="og:description" content="Expert English and Spanish language lessons in Seattle. Personalized one-on-one classes, small group sessions, and business language training." />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Aplus Languages - Professional Language Lessons" />
+        <meta name="twitter:description" content="Expert English and Spanish language lessons. Personalized classes and proven teaching methods." />
+        <link rel="canonical" href="https://www.a-plus-languages.com" />
       </Head>
       <main style={{
         backgroundColor: "#f8fafc",
         minHeight: "100vh",
-        fontFamily: "'Inter', sans-serif"
+        fontFamily: "'Inter', sans-serif",
+        scrollBehavior: "smooth",
       }}>
         {/* Navigation */}
         <nav style={{
@@ -38,6 +48,8 @@ const HomePage: React.FC = () => {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            flexWrap: "wrap",
+            gap: "1rem",
           }}>
             <div style={{ 
               display: "flex", 
@@ -46,7 +58,7 @@ const HomePage: React.FC = () => {
             }}>
               <Image
                 src="/images/aplusenglishLogo.jpg"
-                alt="Aplus English Logo"
+                alt="Aplus Languages Logo"
                 width={40}
                 height={40}
                 style={{ 
@@ -54,14 +66,37 @@ const HomePage: React.FC = () => {
                   objectFit: "cover",
                 }}
               />
-              <div style={{ fontSize: "1.5rem", fontWeight: "700", color: "#3b82f6" }}>
+              <div style={{ 
+                fontSize: "clamp(1.2rem, 4vw, 1.5rem)", 
+                fontWeight: "700", 
+                color: "#3b82f6" 
+              }}>
                 Aplus Languages
               </div>
             </div>
-            <div style={{ display: "flex", gap: "2rem" }}>
-              <a href="#about" style={{ color: "#475569", textDecoration: "none", fontWeight: "500", transition: "color 0.2s" }}>About</a>
-              <a href="#classes" style={{ color: "#475569", textDecoration: "none", fontWeight: "500", transition: "color 0.2s" }}>Classes</a>
-              <a href="mailto:andy@a-plus-languages.com" style={{ color: "#475569", textDecoration: "none", fontWeight: "500", transition: "color 0.2s" }}>Contact</a>
+            <div style={{ display: "flex", gap: "clamp(1rem, 3vw, 2rem)" }}>
+              {["About", "Classes", "Contact"].map((item, index) => (
+                <a
+                  key={index}
+                  href={item === "Contact" ? "mailto:andy@a-plus-languages.com" : `#${item.toLowerCase()}`}
+                  style={{
+                    color: "#475569",
+                    textDecoration: "none",
+                    fontWeight: "500",
+                    transition: "all 0.2s ease",
+                    position: "relative",
+                    padding: "0.5rem 0",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.color = "#3b82f6";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.color = "#475569";
+                  }}
+                >
+                  {item}
+                </a>
+              ))}
             </div>
           </div>
         </nav>
@@ -70,11 +105,12 @@ const HomePage: React.FC = () => {
         <section style={{
           background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)",
           color: "white",
-          padding: "4rem 2rem",
+          padding: "clamp(2rem, 5vw, 4rem) 2rem",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
-          height: "500px",
+          minHeight: "500px",
+          height: "auto",
           display: "flex",
           alignItems: "center",
         }}>
@@ -100,8 +136,14 @@ const HomePage: React.FC = () => {
                 objectFit: "contain",
                 maxWidth: "100%",
                 maxHeight: "100%",
+                filter: "brightness(1.1)",
               }}
               priority
+              loading="eager"
+              onLoadingComplete={(e) => {
+                e.style.opacity = "1";
+                e.style.transform = "scale(1)";
+              }}
             />
           </div>
           {/* Content */}
@@ -112,13 +154,13 @@ const HomePage: React.FC = () => {
             zIndex: 2,
           }}>
             <h1 style={{ 
-              fontSize: "3.5rem", 
+              fontSize: "clamp(2rem, 6vw, 3.5rem)", 
               fontWeight: "700", 
               marginBottom: "1.5rem",
               lineHeight: "1.2",
               textShadow: "0 2px 4px rgba(0,0,0,0.1)",
             }}>
-              Professional Language Classes
+              Expert English & Spanish Language Classes in Seattle
             </h1>
             <p style={{ 
               fontSize: "1.25rem", 
@@ -126,7 +168,7 @@ const HomePage: React.FC = () => {
               marginBottom: "2rem",
               textShadow: "0 1px 2px rgba(0,0,0,0.1)",
             }}>
-              Personalized English and Spanish lessons to help you achieve your language goals
+              Transform your language skills with personalized lessons from native-speaking teachers. Available online or in-person.
             </p>
             <a
               href="mailto:andy@a-plus-languages.com?subject=Inquiry%20about%20English%20Classes"
@@ -179,15 +221,42 @@ const HomePage: React.FC = () => {
               marginBottom: "1.5rem",
               fontWeight: "700",
             }}>
-              About Us
+              Why Choose Aplus Languages?
             </h2>
             <p style={{ 
               fontSize: "1.1rem", 
               color: "#475569",
               lineHeight: "1.6",
+              marginBottom: "1.5rem",
             }}>
-              With years of experience teaching languages, we specialize in helping students achieve their goals through personalized, engaging lessons. Our proven methodology and experienced teachers ensure the best learning experience for every student.
+              With over a decade of experience teaching languages in Seattle, we specialize in helping students achieve fluency through personalized, engaging lessons. Our proven methodology combines conversation practice, grammar fundamentals, and cultural immersion to ensure the best learning experience for every student.
             </p>
+            <ul style={{
+              listStyle: "none",
+              padding: 0,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+              gap: "1rem",
+              marginTop: "2rem",
+            }}>
+              {[
+                "Native-speaking teachers with teaching certifications",
+                "Flexible scheduling for busy professionals",
+                "Proven success with hundreds of satisfied students",
+                "Customized learning plans for your goals"
+              ].map((benefit, index) => (
+                <li key={index} style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  color: "#475569",
+                  fontSize: "1.1rem",
+                }}>
+                  <span style={{ color: "#3b82f6" }}>✓</span>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
           </section>
 
           {/* Classes Section */}
@@ -203,69 +272,136 @@ const HomePage: React.FC = () => {
               color: "#3b82f6",
               marginBottom: "2rem",
               fontWeight: "700",
+              textAlign: "center",
             }}>
               Classes Offered
             </h2>
             <div style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-              gap: "2rem",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gridAutoRows: "minmax(200px, auto)",
+              rowGap: "4rem",
+              columnGap: "2rem",
+              marginBottom: "3rem",
+              maxWidth: "900px",
+              margin: "0 auto",
             }}>
               {[
                 {
                   title: "One-on-one Lessons",
-                  description: "Personalized attention and customized learning plans"
+                  description: "Accelerate your learning with personalized attention and customized lesson plans. Perfect for focused language acquisition and rapid progress in speaking, listening, reading, and writing.",
+                  icon: "👤"
                 },
                 {
                   title: "Small Group Classes",
-                  description: "Interactive learning with 2-4 students"
+                  description: "Learn collaboratively in groups of 2-4 students. Practice real-world conversations, share cultural insights, and enjoy reduced rates while maintaining personalized attention.",
+                  icon: "👥"
                 },
                 {
-                  title: "Business English",
-                  description: "Professional communication and workplace skills"
+                  title: "Business Language Training",
+                  description: "Master professional communication skills, industry-specific vocabulary, and business etiquette. Ideal for career advancement and international business relations.",
+                  icon: "💼"
                 },
                 {
                   title: "Conversation Practice",
-                  description: "Improve your speaking confidence"
+                  description: "Gain confidence through guided discussions, pronunciation workshops, and cultural exchange. Focus on practical, everyday language use with native speakers.",
+                  icon: "💭"
                 }
               ].map((classType, index) => (
                 <div key={index} style={{
-                  padding: "1.5rem",
+                  padding: "2rem",
                   borderRadius: "12px",
                   backgroundColor: "#f8fafc",
                   transition: "all 0.3s ease",
                   border: "1px solid #e2e8f0",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "1rem",
                 }}
                 onMouseOver={(e) => {
                   e.currentTarget.style.transform = "translateY(-5px)";
                   e.currentTarget.style.boxShadow = "0 8px 16px rgba(0,0,0,0.1)";
+                  e.currentTarget.style.borderColor = "#3b82f6";
                 }}
                 onMouseOut={(e) => {
                   e.currentTarget.style.transform = "translateY(0)";
                   e.currentTarget.style.boxShadow = "none";
+                  e.currentTarget.style.borderColor = "#e2e8f0";
                 }}>
+                  <div style={{
+                    fontSize: "2.5rem",
+                    marginBottom: "0.5rem",
+                  }}>
+                    {classType.icon}
+                  </div>
                   <h3 style={{ 
                     fontSize: "1.25rem", 
                     color: "#3b82f6",
-                    marginBottom: "0.75rem",
                     fontWeight: "600",
+                    marginBottom: "0.5rem",
                   }}>
                     {classType.title}
                   </h3>
-                  <p style={{ color: "#475569" }}>
+                  <p style={{ 
+                    color: "#475569",
+                    lineHeight: "1.6",
+                    margin: 0,
+                    flex: "1 1 auto",
+                  }}>
                     {classType.description}
                   </p>
                 </div>
               ))}
             </div>
-            <p style={{ 
+            <div style={{
               textAlign: "center",
-              marginTop: "2rem",
-              color: "#475569",
-              fontSize: "1.1rem",
+              marginTop: "3rem",
+              borderTop: "1px solid #e2e8f0",
+              paddingTop: "2rem",
+              backgroundColor: "#f8fafc",
+              borderRadius: "12px",
+              padding: "2rem",
             }}>
-              Interested in any of these classes? Contact us to discuss your learning goals and schedule.
-            </p>
+              <h3 style={{
+                fontSize: "1.5rem",
+                color: "#3b82f6",
+                fontWeight: "600",
+                marginBottom: "1rem",
+              }}>
+                Ready to Start Your Language Journey?
+              </h3>
+              <p style={{ 
+                color: "#475569",
+                fontSize: "1.1rem",
+                lineHeight: "1.6",
+                maxWidth: "600px",
+                margin: "0 auto 1rem",
+              }}>
+                Book your free consultation today and discover how our personalized approach can help you achieve your language goals.
+              </p>
+              <p style={{ 
+                color: "#475569",
+                fontSize: "1.1rem",
+                lineHeight: "1.6",
+                maxWidth: "600px",
+                margin: "0 auto",
+              }}>
+                <a
+                  href="mailto:andy@a-plus-languages.com?subject=Class%20Inquiry"
+                  style={{ 
+                    color: "#3b82f6",
+                    textDecoration: "none",
+                    fontWeight: "500",
+                    transition: "color 0.2s",
+                  }}
+                  onMouseOver={(e) => e.currentTarget.style.color = "#2563eb"}
+                  onMouseOut={(e) => e.currentTarget.style.color = "#3b82f6"}
+                >
+                  Contact us
+                </a>
+                {" "}to schedule your free consultation and discuss your learning goals.
+              </p>
+            </div>
           </section>
 
           {/* Footer */}
