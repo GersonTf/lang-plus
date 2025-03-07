@@ -11,8 +11,17 @@ export const metadata: Metadata = {
   },
   description: 'Transform your language skills with personalized online English and Spanish lessons from native-speaking teachers. Learn from anywhere in the world.',
   keywords: ['online language classes', 'English lessons', 'Spanish lessons', 'language learning', 'online tutoring', 'ESL', 'language teacher'],
+  alternates: {
+    canonical: 'https://www.apluslanguages.eu'
+  },
   authors: [{ name: 'Aplus Languages' }],
   creator: 'Aplus Languages',
+  publisher: 'Aplus Languages',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -38,6 +47,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -46,6 +56,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  category: 'education'
 }
 
 export default function RootLayout({
