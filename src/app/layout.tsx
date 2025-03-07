@@ -58,7 +58,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ 
+        margin: 0, 
+        padding: 0, 
+        border: 'none', 
+        outline: 'none',
+        overflowX: 'hidden' 
+      }}>
         {children}
         <JsonLd />
       </body>

@@ -1,0 +1,94 @@
+/* Header container - full width with sticky behavior */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Content container - centered with max width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+/* Navigation wrapper - uses flexbox for layout */
+.navWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo container - left side */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Logo image */
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Brand text */
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #3b82f6; /* Blue color */
+}
+
+/* Navigation menu - right side */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Navigation links */
+.navLink {
+  position: relative;
+  padding: 0.5rem 0;
+  color: #4b5563; /* Gray 600 */
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Hovered navigation link */
+.navLinkHovered {
+  color: #3b82f6; /* Blue 500 */
+  transform: translateY(-2px);
+}
+
+/* Underlined navigation link */
+.navLinkUnderlined {
+  border-bottom: 2px solid #3b82f6;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .container {
+    padding: 1.25rem 2rem;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .brand {
+    font-size: 1.5rem;
+  }
+  
+  .nav {
+    gap: 2rem;
+  }
+} 

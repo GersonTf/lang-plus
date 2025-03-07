@@ -1,9 +1,10 @@
-"use client"; // Add this line at the top
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Head from 'next/head';
 import JsonLd from './components/JsonLd';
+import Header from './components/Header';
 
 // Add metadata for SEO
 const metadata = {
@@ -12,9 +13,48 @@ const metadata = {
   keywords: 'online language classes, English lessons, Spanish lessons, language learning, online tutoring, ESL, language teacher',
 };
 
+// Class types data
+const classTypes = [
+  {
+    icon: "👤",
+    title: "Online One-on-one Lessons",
+    description: "Accelerate your learning with my personalized attention and customized lesson plans. Perfect for focused language acquisition with the convenience of learning from home."
+  },
+  {
+    icon: "👥",
+    title: "Virtual Group Classes",
+    description: "Learn collaboratively in small online groups of 2-4 students. Practice real-world conversations and share cultural insights while enjoying reduced rates."
+  },
+  {
+    icon: "💼",
+    title: "Online Business Language Training",
+    description: "Master professional communication skills for the digital workplace. Tailored training for remote teams, international business relations, and virtual networking."
+  },
+  {
+    icon: "💭",
+    title: "Virtual Conversation Practice",
+    description: "Build confidence through guided online discussions, interactive pronunciation workshops, and cultural exchange. Practice with a native speaker from the comfort of your home."
+  }
+];
+
+// Stats data
+const stats = [
+  { number: "10+", label: "Years Experience" },
+  { number: "1000+", label: "Students Taught" },
+  { number: "4.9/5", label: "Student Rating" },
+];
+
 const HomePage: React.FC = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [hoveredNavItem, setHoveredNavItem] = useState<string | null>(null);
+  
+  // Pre-declare card hover states
+  const [hoveredClassCards, setHoveredClassCards] = useState<{[key: number]: boolean}>({});
+  // CTA button hover state
+  const [isCtaHovered, setIsCtaHovered] = useState(false);
+  // Scroll top button hover state  
+  const [isScrollTopButtonHovered, setIsScrollTopButtonHovered] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +74,11 @@ const HomePage: React.FC = () => {
     setTimeout(() => {
       setIsLoading(false);
     }, 200);
+  };
+  
+  // Helper functions for hover states
+  const setClassCardHovered = (index: number, hovered: boolean) => {
+    setHoveredClassCards(prev => ({...prev, [index]: hovered}));
   };
 
   return (
@@ -56,96 +101,15 @@ const HomePage: React.FC = () => {
         fontFamily: "'Inter', sans-serif",
         scrollBehavior: "smooth",
         position: "relative",
+        border: "none",
+        outline: "none",
+        margin: 0,
+        padding: 0,
       }}
       role="main"
       aria-label="Main content">
-        {/* Navigation */}
-        <header>
-          <nav style={{
-            backgroundColor: "#ffffff",
-            padding: "clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem)",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
-            position: "sticky",
-            top: 0,
-            zIndex: 1000,
-          }}
-          role="navigation"
-          aria-label="Main navigation">
-            <div style={{
-              maxWidth: "1200px",
-              margin: "0 auto",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              flexWrap: "wrap",
-              gap: "1rem",
-            }}>
-              <div style={{ 
-                display: "flex", 
-                alignItems: "center", 
-                gap: "1rem",
-              }}>
-                <Image
-                  src="/images/aplusenglishLogo.jpg"
-                  alt="Aplus Languages Logo"
-                  width={60}
-                  height={60}
-                  style={{ 
-                    borderRadius: "12px",
-                    objectFit: "cover",
-                    width: "clamp(40px, 5vw, 60px)",
-                    height: "clamp(40px, 5vw, 60px)",
-                  }}
-                  priority
-                />
-                <div style={{ 
-                  fontSize: "clamp(1.2rem, 4vw, 1.5rem)", 
-                  fontWeight: "700", 
-                  color: "#3b82f6" 
-                }}
-                role="heading"
-                aria-level={1}>
-                  Aplus Languages
-                </div>
-              </div>
-              <nav style={{ display: "flex", gap: "clamp(1rem, 3vw, 2rem)" }}
-                   role="navigation"
-                   aria-label="Section navigation">
-                {["About", "Classes", "Contact"].map((item, index) => (
-                  <a
-                    key={index}
-                    href={item === "Contact" ? "mailto:andy@a-plus-languages.com" : `#${item.toLowerCase()}`}
-                    style={{
-                      color: "#475569",
-                      textDecoration: "none",
-                      fontWeight: "500",
-                      transition: "all 0.2s ease",
-                      position: "relative",
-                      padding: "0.5rem 0",
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.color = "#3b82f6";
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                      if (item !== "Contact") {
-                        e.currentTarget.style.borderBottom = "2px solid #3b82f6";
-                      }
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.color = "#475569";
-                      e.currentTarget.style.transform = "translateY(0)";
-                      if (item !== "Contact") {
-                        e.currentTarget.style.borderBottom = "none";
-                      }
-                    }}
-                    aria-label={`Navigate to ${item} section`}
-                  >
-                    {item}
-                  </a>
-                ))}
-              </nav>
-            </div>
-          </nav>
-        </header>
+        {/* Modern Header Component */}
+        <Header />
 
         {/* Hero Section */}
         <section style={{
@@ -188,11 +152,6 @@ const HomePage: React.FC = () => {
               }}
               priority
               loading="eager"
-              onLoad={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.opacity = "1";
-                target.style.transform = "scale(1)";
-              }}
             />
           </div>
           {/* Content */}
@@ -366,53 +325,25 @@ const HomePage: React.FC = () => {
               width: "100%",
               marginBottom: "5rem",
             }}>
-              {[
-                {
-                  title: "Online One-on-one Lessons",
-                  description: "Accelerate your learning with my personalized attention and customized lesson plans. Perfect for focused language acquisition with the convenience of learning from home.",
-                  icon: "👤"
-                },
-                {
-                  title: "Virtual Group Classes",
-                  description: "Learn collaboratively in small online groups of 2-4 students. Practice real-world conversations and share cultural insights while enjoying reduced rates.",
-                  icon: "👥"
-                },
-                {
-                  title: "Online Business Language Training",
-                  description: "Master professional communication skills for the digital workplace. Tailored training for remote teams, international business relations, and virtual networking.",
-                  icon: "💼"
-                },
-                {
-                  title: "Virtual Conversation Practice",
-                  description: "Build confidence through guided online discussions, interactive pronunciation workshops, and cultural exchange. Practice with a native speaker from the comfort of your home.",
-                  icon: "💭"
-                }
-              ].map((classType, index) => (
+              {classTypes.map((classType, index) => (
                 <div key={index} style={{
                   padding: "clamp(1.5rem, 4vw, 2rem)",
                   borderRadius: "12px",
                   backgroundColor: "#f8fafc",
                   transition: "all 0.3s ease",
-                  border: "1px solid #e2e8f0",
+                  border: hoveredClassCards[index] ? "1px solid #3b82f6" : "1px solid #e2e8f0",
                   display: "flex",
                   flexDirection: "column",
                   gap: "1rem",
                   height: "100%",
-                  boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+                  boxShadow: hoveredClassCards[index] ? "0 8px 16px rgba(0,0,0,0.1)" : "0 2px 4px rgba(0,0,0,0.05)",
+                  transform: hoveredClassCards[index] ? "translateY(-5px)" : "translateY(0)",
                   width: "100%",
                 }}
                 role="article"
                 aria-labelledby={`class-title-${index}`}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = "translateY(-5px)";
-                  e.currentTarget.style.boxShadow = "0 8px 16px rgba(0,0,0,0.1)";
-                  e.currentTarget.style.borderColor = "#3b82f6";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 2px 4px rgba(0,0,0,0.05)";
-                  e.currentTarget.style.borderColor = "#e2e8f0";
-                }}>
+                onMouseOver={() => setClassCardHovered(index, true)}
+                onMouseOut={() => setClassCardHovered(index, false)}>
                   <div style={{
                     fontSize: "2.5rem",
                     marginBottom: "0.5rem",
@@ -459,11 +390,7 @@ const HomePage: React.FC = () => {
                 marginBottom: "2rem",
                 flexWrap: "wrap",
               }}>
-                {[
-                  { number: "10+", label: "Years Experience" },
-                  { number: "1000+", label: "Students Taught" },
-                  { number: "4.9/5", label: "Student Rating" },
-                ].map((stat, index) => (
+                {stats.map((stat, index) => (
                   <div key={index} style={{
                     textAlign: "center",
                   }}>
@@ -516,24 +443,17 @@ const HomePage: React.FC = () => {
                   style={{ 
                     display: "inline-block",
                     padding: "1rem 2.5rem",
-                    backgroundColor: "#3b82f6",
+                    backgroundColor: isCtaHovered ? "#2563eb" : "#3b82f6",
                     color: "white",
                     borderRadius: "8px",
                     fontWeight: "600",
                     textDecoration: "none",
                     transition: "all 0.3s ease",
-                    boxShadow: "0 4px 6px rgba(59, 130, 246, 0.25)",
+                    boxShadow: isCtaHovered ? "0 6px 12px rgba(59, 130, 246, 0.3)" : "0 4px 6px rgba(59, 130, 246, 0.25)",
+                    transform: isCtaHovered ? "translateY(-2px)" : "translateY(0)",
                   }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.boxShadow = "0 6px 12px rgba(59, 130, 246, 0.3)";
-                    e.currentTarget.style.backgroundColor = "#2563eb";
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.transform = "translateY(0)";
-                    e.currentTarget.style.boxShadow = "0 4px 6px rgba(59, 130, 246, 0.25)";
-                    e.currentTarget.style.backgroundColor = "#3b82f6";
-                  }}
+                  onMouseOver={() => setIsCtaHovered(true)}
+                  onMouseOut={() => setIsCtaHovered(false)}
                 >
                   Schedule Free Consultation
                 </a>
@@ -593,26 +513,19 @@ const HomePage: React.FC = () => {
               height: "3rem",
               borderRadius: "50%",
               border: "none",
-              boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+              boxShadow: isScrollTopButtonHovered ? "0 6px 12px rgba(0,0,0,0.15)" : "0 4px 6px rgba(0,0,0,0.1)",
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: "1.5rem",
               transition: "all 0.3s ease",
-              opacity: "0.9",
+              opacity: isScrollTopButtonHovered ? "1" : "0.9",
               zIndex: 1000,
+              transform: isScrollTopButtonHovered ? "translateY(-3px)" : "translateY(0)",
             }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = "translateY(-3px)";
-              e.currentTarget.style.boxShadow = "0 6px 12px rgba(0,0,0,0.15)";
-              e.currentTarget.style.opacity = "1";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
-              e.currentTarget.style.opacity = "0.9";
-            }}
+            onMouseOver={() => setIsScrollTopButtonHovered(true)}
+            onMouseOut={() => setIsScrollTopButtonHovered(false)}
             aria-label="Scroll to top of page"
           >
             ↑
