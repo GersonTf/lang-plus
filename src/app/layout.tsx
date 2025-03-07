@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   title: 'Aplus Languages - Professional Online English & Spanish Language Lessons',
   description: 'Expert online English and Spanish language lessons worldwide. Learn with a native-speaking teacher using proven virtual teaching methods.',
   keywords: ['online language classes', 'English lessons', 'Spanish lessons', 'language learning', 'online tutoring'],
+  manifest: '/manifest.json',
+  themeColor: '#3b82f6',
   openGraph: {
     title: 'Aplus Languages - Expert Online English & Spanish Lessons',
     description: 'Transform your language skills with personalized online lessons. Professional one-on-one classes and group training available worldwide.',
@@ -55,6 +57,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#3b82f6" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )

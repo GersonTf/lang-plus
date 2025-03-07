@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aplus Languages
 
-## Getting Started
+Professional online language teaching platform offering personalized English and Spanish lessons.
 
-First, run the development server:
+## About
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Aplus Languages provides expert language instruction through:
+- One-on-one online lessons
+- Small group classes
+- Business language training
+- Conversation practice
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [www.apluslanguages.eu](https://www.apluslanguages.eu) to learn more.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Personalized curriculum
+- Native speaker instruction
+- Flexible scheduling
+- Interactive online learning
+- Business-focused language training
+- Cultural immersion
 
-## Learn More
+## Contact
 
-To learn more about Next.js, take a look at the following resources:
+For inquiries about classes:
+Email: andy@a-plus-languages.com
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technology
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Built with:
+- Next.js 15
+- React 19
+- TypeScript
+- Modern web technologies for optimal performance
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2024 Aplus Languages. All rights reserved.

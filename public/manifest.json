@@ -1,0 +1,16 @@
+{
+  "name": "Aplus Languages",
+  "short_name": "Aplus Lang",
+  "description": "Professional online English and Spanish language lessons",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/images/aplusenglishLogo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+} 
