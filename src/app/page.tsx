@@ -8,23 +8,23 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Aplus Languages - Professional English & Spanish Language Lessons in Seattle</title>
+        <title>Aplus Languages - Professional Online English & Spanish Language Lessons</title>
         <meta
           name="description"
-          content="Expert English and Spanish language lessons in Seattle. Personalized one-on-one classes, small group sessions, and business language training. Native-speaking teachers with proven teaching methods."
+          content="Expert online English and Spanish language lessons worldwide. Personalized one-on-one classes, small group sessions, and business language training. Learn with a native-speaking teacher using proven virtual teaching methods."
         />
         <meta
           name="keywords"
-          content="language classes Seattle, English lessons Seattle, Spanish lessons Seattle, business English, conversational Spanish, private language tutor, language learning, ESL classes, Spanish classes, online language lessons, in-person language classes"
+          content="online language classes, virtual English lessons, online Spanish lessons, business English online, conversational Spanish online, private language tutor, remote language learning, online ESL classes, virtual Spanish classes, Zoom language lessons, distance learning"
         />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Aplus Languages - Professional Language Lessons in Seattle" />
-        <meta property="og:description" content="Expert English and Spanish language lessons in Seattle. Personalized one-on-one classes, small group sessions, and business language training." />
+        <meta property="og:title" content="Aplus Languages - Professional Online Language Lessons" />
+        <meta property="og:description" content="Expert online English and Spanish language lessons. Personalized virtual classes with a proven teaching method." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Aplus Languages - Professional Language Lessons" />
-        <meta name="twitter:description" content="Expert English and Spanish language lessons. Personalized classes and proven teaching methods." />
+        <meta name="twitter:title" content="Aplus Languages - Professional Online Language Lessons" />
+        <meta name="twitter:description" content="Expert online English and Spanish lessons. Personalized virtual classes with a proven teaching method." />
         <link rel="canonical" href="https://www.a-plus-languages.com" />
       </Head>
       <main style={{
@@ -160,7 +160,7 @@ const HomePage: React.FC = () => {
               lineHeight: "1.2",
               textShadow: "0 2px 4px rgba(0,0,0,0.1)",
             }}>
-              Expert English & Spanish Language Classes in Seattle
+              Expert Online English & Spanish Language Classes
             </h1>
             <p style={{ 
               fontSize: "1.25rem", 
@@ -168,7 +168,7 @@ const HomePage: React.FC = () => {
               marginBottom: "2rem",
               textShadow: "0 1px 2px rgba(0,0,0,0.1)",
             }}>
-              Transform your language skills with personalized lessons from native-speaking teachers. Available online or in-person.
+              Transform your language skills with personalized online lessons from your dedicated native-speaking teacher. Learn from anywhere in the world.
             </p>
             <a
               href="mailto:andy@a-plus-languages.com?subject=Inquiry%20about%20English%20Classes"
@@ -229,7 +229,7 @@ const HomePage: React.FC = () => {
               lineHeight: "1.6",
               marginBottom: "1.5rem",
             }}>
-              With over a decade of experience teaching languages in Seattle, we specialize in helping students achieve fluency through personalized, engaging lessons. Our proven methodology combines conversation practice, grammar fundamentals, and cultural immersion to ensure the best learning experience for every student.
+              With over a decade of experience in online language teaching, I specialize in helping students achieve fluency through personalized, engaging virtual lessons. My proven methodology combines live conversation practice, interactive grammar instruction, and cultural immersion to ensure the best learning experience for every student.
             </p>
             <ul style={{
               listStyle: "none",
@@ -240,10 +240,10 @@ const HomePage: React.FC = () => {
               marginTop: "2rem",
             }}>
               {[
-                "Native-speaking teachers with teaching certifications",
-                "Flexible scheduling for busy professionals",
-                "Proven success with hundreds of satisfied students",
-                "Customized learning plans for your goals"
+                "Native speaker with online teaching certification",
+                "Flexible scheduling across all time zones",
+                "Proven success with hundreds of online students",
+                "Personalized attention and dedicated support"
               ].map((benefit, index) => (
                 <li key={index} style={{
                   display: "flex",
@@ -288,23 +288,23 @@ const HomePage: React.FC = () => {
             }}>
               {[
                 {
-                  title: "One-on-one Lessons",
-                  description: "Accelerate your learning with personalized attention and customized lesson plans. Perfect for focused language acquisition and rapid progress in speaking, listening, reading, and writing.",
+                  title: "Online One-on-one Lessons",
+                  description: "Accelerate your learning with my personalized attention and customized lesson plans. Perfect for focused language acquisition with the convenience of learning from home.",
                   icon: "👤"
                 },
                 {
-                  title: "Small Group Classes",
-                  description: "Learn collaboratively in groups of 2-4 students. Practice real-world conversations, share cultural insights, and enjoy reduced rates while maintaining personalized attention.",
+                  title: "Virtual Group Classes",
+                  description: "Learn collaboratively in small online groups of 2-4 students. Practice real-world conversations and share cultural insights while enjoying reduced rates.",
                   icon: "👥"
                 },
                 {
-                  title: "Business Language Training",
-                  description: "Master professional communication skills, industry-specific vocabulary, and business etiquette. Ideal for career advancement and international business relations.",
+                  title: "Online Business Language Training",
+                  description: "Master professional communication skills for the digital workplace. Tailored training for remote teams, international business relations, and virtual networking.",
                   icon: "💼"
                 },
                 {
-                  title: "Conversation Practice",
-                  description: "Gain confidence through guided discussions, pronunciation workshops, and cultural exchange. Focus on practical, everyday language use with native speakers.",
+                  title: "Virtual Conversation Practice",
+                  description: "Build confidence through guided online discussions, interactive pronunciation workshops, and cultural exchange. Practice with a native speaker from the comfort of your home.",
                   icon: "💭"
                 }
               ].map((classType, index) => (
@@ -377,7 +377,7 @@ const HomePage: React.FC = () => {
                 maxWidth: "600px",
                 margin: "0 auto 1rem",
               }}>
-                Book your free consultation today and discover how our personalized approach can help you achieve your language goals.
+                Book your free consultation today and discover how my personalized approach can help you achieve your language goals.
               </p>
               <p style={{ 
                 color: "#475569",
