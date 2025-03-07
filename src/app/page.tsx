@@ -1,15 +1,39 @@
 "use client"; // Add this line at the top
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const HomePage: React.FC = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleEmailClick = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 200);
+  };
+
   return (
     <main style={{
       backgroundColor: "#f8fafc",
       minHeight: "100vh",
       fontFamily: "'Inter', sans-serif",
       scrollBehavior: "smooth",
+      position: "relative",
     }}
     role="main"
     aria-label="Main content">
@@ -42,11 +66,13 @@ const HomePage: React.FC = () => {
               <Image
                 src="/images/aplusenglishLogo.jpg"
                 alt="Aplus Languages Logo"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 style={{ 
-                  borderRadius: "8px",
+                  borderRadius: "12px",
                   objectFit: "cover",
+                  width: "clamp(40px, 5vw, 60px)",
+                  height: "clamp(40px, 5vw, 60px)",
                 }}
                 priority
               />
@@ -77,9 +103,17 @@ const HomePage: React.FC = () => {
                   }}
                   onMouseOver={(e) => {
                     e.currentTarget.style.color = "#3b82f6";
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                    if (item !== "Contact") {
+                      e.currentTarget.style.borderBottom = "2px solid #3b82f6";
+                    }
                   }}
                   onMouseOut={(e) => {
                     e.currentTarget.style.color = "#475569";
+                    e.currentTarget.style.transform = "translateY(0)";
+                    if (item !== "Contact") {
+                      e.currentTarget.style.borderBottom = "none";
+                    }
                   }}
                   aria-label={`Navigate to ${item} section`}
                 >
@@ -165,33 +199,58 @@ const HomePage: React.FC = () => {
           </p>
           <a
             href="mailto:andy@a-plus-languages.com?subject=Inquiry%20about%20English%20Classes"
+            onClick={handleEmailClick}
             style={{
               display: "inline-block",
               padding: "1rem 2rem",
               fontSize: "1.1rem",
-              backgroundColor: "white",
+              backgroundColor: isLoading ? "#e2e8f0" : "white",
               color: "#3b82f6",
               border: "none",
               borderRadius: "8px",
               fontWeight: "600",
-              cursor: "pointer",
+              cursor: isLoading ? "wait" : "pointer",
               transition: "all 0.3s ease",
               boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
               textTransform: "uppercase",
               letterSpacing: "0.5px",
               textDecoration: "none",
+              position: "relative",
+              overflow: "hidden",
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.transform = "translateY(-3px)";
-              e.currentTarget.style.boxShadow = "0 8px 12px rgba(0,0,0,0.15)";
+              if (!isLoading) {
+                e.currentTarget.style.transform = "translateY(-3px)";
+                e.currentTarget.style.boxShadow = "0 8px 12px rgba(0,0,0,0.15)";
+              }
             }}
             onMouseOut={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
+              if (!isLoading) {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
+              }
             }}
             aria-label="Email us to inquire about English classes"
           >
-            Email Us
+            {isLoading ? (
+              <div style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+              }}>
+                <span style={{
+                  display: "inline-block",
+                  width: "0.5rem",
+                  height: "0.5rem",
+                  borderRadius: "50%",
+                  backgroundColor: "#3b82f6",
+                  animation: "pulse 1s infinite",
+                }}></span>
+                Opening Email
+              </div>
+            ) : (
+              "Email Us"
+            )}
           </a>
         </div>
       </section>
@@ -443,6 +502,53 @@ const HomePage: React.FC = () => {
           </p>
         </footer>
       </main>
+
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          style={{
+            position: "fixed",
+            bottom: "2rem",
+            right: "2rem",
+            backgroundColor: "#3b82f6",
+            color: "white",
+            width: "3rem",
+            height: "3rem",
+            borderRadius: "50%",
+            border: "none",
+            boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "1.5rem",
+            transition: "all 0.3s ease",
+            opacity: "0.9",
+            zIndex: 1000,
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.transform = "translateY(-3px)";
+            e.currentTarget.style.boxShadow = "0 6px 12px rgba(0,0,0,0.15)";
+            e.currentTarget.style.opacity = "1";
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.transform = "translateY(0)";
+            e.currentTarget.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
+            e.currentTarget.style.opacity = "0.9";
+          }}
+          aria-label="Scroll to top of page"
+        >
+          ↑
+        </button>
+      )}
+
+      <style jsx global>{`
+        @keyframes pulse {
+          0% { opacity: 0.4; }
+          50% { opacity: 1; }
+          100% { opacity: 0.4; }
+        }
+      `}</style>
     </main>
   );
 };
