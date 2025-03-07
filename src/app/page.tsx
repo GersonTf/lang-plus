@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Head from 'next/head';
+import JsonLd from './components/JsonLd';
 
 // Add metadata for SEO
 const metadata = {
@@ -37,6 +38,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
+      <JsonLd />
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
