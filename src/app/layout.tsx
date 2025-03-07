@@ -5,14 +5,14 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.apluslanguages.eu'),
-  title: 'Aplus Languages | Clases de Inglés y Español Online con Profesor Nativo',
-  description: 'Aprende inglés y español online con un profesor nativo certificado. Clases particulares, grupales y para empresas. Primera clase de prueba gratis. Horarios flexibles.',
-  keywords: 'clases de inglés online, profesor de inglés nativo, clases de español online, cursos de idiomas, clases particulares de inglés, business english, english teacher, spanish teacher, clases de conversación',
+  title: 'Aplus Languages | Online English and Spanish Classes with Native Teacher',
+  description: 'Learn English and Spanish online with a certified native teacher. Private, group, and corporate classes. First trial class free. Flexible schedules.',
+  keywords: 'online english classes, native english teacher, online spanish classes, language courses, private english lessons, business english, english teacher, spanish teacher, conversation classes',
   manifest: '/manifest.json',
   themeColor: '#3b82f6',
   openGraph: {
-    title: 'Aplus Languages | Clases de Inglés y Español Online con Profesor Nativo',
-    description: 'Aprende inglés y español online con un profesor nativo certificado. Metodología probada, clases personalizadas y horarios flexibles.',
+    title: 'Aplus Languages | Online English and Spanish Classes with Native Teacher',
+    description: 'Learn English and Spanish online with a certified native teacher. Proven methodology, personalized classes, and flexible schedules.',
     url: 'https://www.aplus-languages.com',
     siteName: 'Aplus Languages',
     images: [
