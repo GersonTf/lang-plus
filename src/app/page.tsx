@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
       {/* Navigation */}
       <nav style={{
         backgroundColor: "#ffffff",
-        padding: "1rem 2rem",
+        padding: "clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem)",
         boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
         position: "sticky",
         top: 0,
@@ -184,15 +184,17 @@ const HomePage: React.FC = () => {
       <main style={{
         maxWidth: "1200px",
         margin: "0 auto",
-        padding: "2rem",
+        padding: "clamp(1rem, 3vw, 2rem)",
       }}>
         {/* About Section */}
         <section id="about" style={{
-          margin: "2rem 0",
-          padding: "2rem",
+          margin: "clamp(1rem, 3vw, 2rem) 0",
+          padding: "clamp(1.5rem, 4vw, 2rem)",
           borderRadius: "16px",
           backgroundColor: "white",
           boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
+          maxWidth: "900px",
+          marginInline: "auto",
         }}>
           <h2 style={{ 
             fontSize: "2rem", 
@@ -214,8 +216,8 @@ const HomePage: React.FC = () => {
             listStyle: "none",
             padding: 0,
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "1rem",
+            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "clamp(1rem, 3vw, 1.5rem)",
             marginTop: "2rem",
           }}>
             {[
@@ -240,11 +242,13 @@ const HomePage: React.FC = () => {
 
         {/* Classes Section */}
         <section id="classes" style={{
-          margin: "2rem 0",
-          padding: "2rem",
+          margin: "clamp(1rem, 3vw, 2rem) 0",
+          padding: "clamp(1.5rem, 4vw, 2rem)",
           borderRadius: "16px",
           backgroundColor: "white",
           boxShadow: "0 4px 6px rgba(0,0,0,0.05)",
+          maxWidth: "900px",
+          marginInline: "auto",
         }}>
           <h2 style={{ 
             fontSize: "2rem", 
@@ -257,13 +261,10 @@ const HomePage: React.FC = () => {
           </h2>
           <div style={{
             display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gridAutoRows: "minmax(200px, auto)",
-            rowGap: "4rem",
-            columnGap: "2rem",
-            marginBottom: "3rem",
-            maxWidth: "900px",
-            margin: "0 auto",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 400px), 1fr))",
+            gap: "5rem",
+            width: "100%",
+            marginBottom: "5rem",
           }}>
             {[
               {
@@ -288,7 +289,7 @@ const HomePage: React.FC = () => {
               }
             ].map((classType, index) => (
               <div key={index} style={{
-                padding: "2rem",
+                padding: "clamp(1.5rem, 4vw, 2rem)",
                 borderRadius: "12px",
                 backgroundColor: "#f8fafc",
                 transition: "all 0.3s ease",
@@ -296,6 +297,9 @@ const HomePage: React.FC = () => {
                 display: "flex",
                 flexDirection: "column",
                 gap: "1rem",
+                height: "100%",
+                boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
+                width: "100%",
               }}
               onMouseOver={(e) => {
                 e.currentTarget.style.transform = "translateY(-5px)";
@@ -304,7 +308,7 @@ const HomePage: React.FC = () => {
               }}
               onMouseOut={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = "none";
+                e.currentTarget.style.boxShadow = "0 2px 4px rgba(0,0,0,0.05)";
                 e.currentTarget.style.borderColor = "#e2e8f0";
               }}>
                 <div style={{
@@ -334,12 +338,14 @@ const HomePage: React.FC = () => {
           </div>
           <div style={{
             textAlign: "center",
-            marginTop: "3rem",
+            marginTop: "5rem",
             borderTop: "1px solid #e2e8f0",
-            paddingTop: "2rem",
+            paddingTop: "clamp(2rem, 5vw, 3rem)",
             backgroundColor: "#f8fafc",
             borderRadius: "12px",
-            padding: "2rem",
+            padding: "clamp(2rem, 5vw, 3rem)",
+            width: "100%",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
           }}>
             <h3 style={{
               fontSize: "1.5rem",
@@ -386,8 +392,8 @@ const HomePage: React.FC = () => {
         {/* Footer */}
         <footer style={{
           textAlign: "center",
-          marginTop: "2rem",
-          padding: "1.5rem",
+          marginTop: "clamp(1.5rem, 4vw, 2rem)",
+          padding: "clamp(1rem, 3vw, 1.5rem)",
           color: "#64748b",
           borderTop: "1px solid #e2e8f0",
         }}>
