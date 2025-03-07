@@ -2,10 +2,14 @@ import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/', '/_next/', '/static/'],
+      },
+    ],
     sitemap: 'https://www.apluslanguages.eu/sitemap.xml',
+    host: 'https://www.apluslanguages.eu',
   }
 } 
