@@ -1,7 +1,6 @@
 # Allow all crawlers
 User-agent: *
 Allow: /
-Allow: /sitemap.xml
 
 # Sitemap location
 Sitemap: https://www.apluslanguages.eu/sitemap.xml 
