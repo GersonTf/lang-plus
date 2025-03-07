@@ -118,9 +118,10 @@ const HomePage: React.FC = () => {
             }}
             priority
             loading="eager"
-            onLoadingComplete={(e) => {
-              e.style.opacity = "1";
-              e.style.transform = "scale(1)";
+            onLoad={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.opacity = "1";
+              target.style.transform = "scale(1)";
             }}
           />
         </div>
