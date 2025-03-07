@@ -9,6 +9,11 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
+  // Explicitly set compiler to remove any warnings
+  compiler: {
+    // ssr and displayName are configured by default
+    styledComponents: false,
+  },
 }
 
 module.exports = nextConfig 
