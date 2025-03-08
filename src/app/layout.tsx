@@ -26,20 +26,10 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
-      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
-      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
-    ],
-    apple: [
-      { url: '/apple-icon.png', type: 'image/png', sizes: '180x180' },
-    ],
-    other: [
-      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#1e3a8a' },
-    ],
-  },
+  // Next.js will automatically look for these files in the app directory:
+  // - favicon.ico
+  // - icon.png
+  // - apple-icon.png
   other: {
     'preconnect': ['https://fonts.googleapis.com'],
     'manifest': '/manifest.json'
@@ -100,8 +90,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={roboto.variable}>
       <head>
+        {/* Primary Meta Tags */}
         <link rel="canonical" href="https://www.apluslanguages.eu/" />
         <meta name="theme-color" content="#3b82f6" />
+        
+        {/* Web App Manifest */}
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body style={{ 
