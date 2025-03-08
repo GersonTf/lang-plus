@@ -21,7 +21,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between w-full">
           {/* Logo and Brand - left side */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <Logo className="w-8 h-8 sm:w-10 sm:h-10 md:w-[55px] md:h-[55px]" />
+            <Logo className="w-12 h-12 sm:w-16 sm:h-16 md:w-[70px] md:h-[70px]" />
             <span className="heading-primary text-lg sm:text-xl md:text-2xl">
               A Plus Languages
             </span>

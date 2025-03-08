@@ -36,6 +36,9 @@ export const metadata: Metadata = {
       { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#1e3a8a' },
     ],
   },
+  other: {
+    'preconnect': ['https://fonts.googleapis.com']
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -45,16 +48,16 @@ export const metadata: Metadata = {
     siteName: 'A+ Languages',
     images: [
       {
-        url: 'https://www.apluslanguages.eu/images/aplusenglishLogo.svg',
+        url: 'https://www.apluslanguages.eu/images/aplus-logo.svg',
         width: 200,
         height: 200,
-        alt: 'A+ Languages Logo',
+        alt: 'A Plus Languages Logo',
       },
       {
         url: 'https://www.apluslanguages.eu/og-image.jpg', // Keep as fallback for platforms that don't support SVG
         width: 1200,
         height: 630,
-        alt: 'A+ Languages',
+        alt: 'A Plus Languages',
       }
     ],
   },
@@ -62,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'A+ Languages - Online Language Learning',
     description: 'Learn languages online with personalized lessons from expert teachers.',
-    images: ['https://www.apluslanguages.eu/images/aplusenglishLogo.svg'],
+    images: ['https://www.apluslanguages.eu/images/aplus-logo.svg'],
   },
   robots: {
     index: true,

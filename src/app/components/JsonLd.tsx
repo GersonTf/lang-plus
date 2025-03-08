@@ -9,7 +9,7 @@ const JsonLd: React.FC = () => {
     name: 'A Plus Languages',
     description: 'Professional online English and Spanish language lessons for individuals and businesses.',
     url: 'https://www.apluslanguages.eu',
-    logo: 'https://www.apluslanguages.eu/images/aplusenglishLogo.svg',
+    logo: 'https://www.apluslanguages.eu/images/aplus-logo.svg',
     offers: {
       '@type': 'Offer',
       price: '0',

@@ -12,6 +12,9 @@ const nextConfig = {
     
     // Cache optimized images for 1 week
     minimumCacheTTL: 60 * 60 * 24 * 7,
+    
+    // Enable SVG support
+    dangerouslyAllowSVG: true,
   },
   reactStrictMode: true,
   // Explicitly set compiler to remove any warnings
