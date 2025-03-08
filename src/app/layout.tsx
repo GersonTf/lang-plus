@@ -41,7 +41,8 @@ export const metadata: Metadata = {
     ],
   },
   other: {
-    'preconnect': ['https://fonts.googleapis.com']
+    'preconnect': ['https://fonts.googleapis.com'],
+    'manifest': '/manifest.json'
   },
   openGraph: {
     type: 'website',
@@ -83,6 +84,7 @@ export const metadata: Metadata = {
     },
   },
   category: 'education',
+  applicationName: 'A Plus Languages',
 }
 
 export default function RootLayout({
@@ -92,6 +94,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={roboto.variable}>
+      <head>
+        <link rel="canonical" href="https://www.apluslanguages.eu/" />
+        <meta name="theme-color" content="#3b82f6" />
+      </head>
       <body style={{ 
         margin: 0, 
         padding: 0, 
