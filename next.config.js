@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: '**',
       },
     ],
+    // Enable standard image optimization
+    formats: ['image/webp'],
+    
+    // Cache optimized images for 1 week
+    minimumCacheTTL: 60 * 60 * 24 * 7,
   },
   reactStrictMode: true,
   // Explicitly set compiler to remove any warnings

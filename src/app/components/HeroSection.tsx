@@ -90,12 +90,12 @@ const HeroSection: React.FC = () => {
               {/* Main image container */}
               <div className="absolute inset-5 rounded-full overflow-hidden bg-gradient-to-br from-blue-200/20 to-white/10 backdrop-blur-sm shadow-lg">
                 <Image
-                  src="/images/student-learning-online.jpg"
+                  src="/images/student-learning.jpg"
                   alt="Online language learning"
                   fill
-                  className="object-cover object-center rounded-full p-1"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center rounded-full p-1"
                 />
               </div>
               
@@ -105,15 +105,13 @@ const HeroSection: React.FC = () => {
             
             {/* Language flag components */}
             <LanguageFlag 
-              flagSrc="/images/Flag_of_Spain.svg"
+              language="spanish"
               position="top-left"
-              alt="Spanish Flag"
             />
             
             <LanguageFlag 
-              flagSrc="/images/Flag_of_the_United_Kingdom.svg"
+              language="uk"
               position="bottom-right"
-              alt="UK Flag"
             />
           </div>
         </div>

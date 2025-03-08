@@ -4,17 +4,22 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 interface LanguageFlagProps {
-  flagSrc: string;
   position: "top-left" | "bottom-right";
-  alt: string;
+  language: "spanish" | "uk";
 }
 
 const LanguageFlag: React.FC<LanguageFlagProps> = ({ 
-  flagSrc, 
   position,
-  alt
+  language
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  
+  // Get the correct flag path based on language
+  const flagSrc = language === "spanish" 
+    ? "/images/Flag_of_Spain.svg" 
+    : "/images/Flag_of_the_United_Kingdom.svg";
+  
+  const alt = language === "spanish" ? "Spanish Flag" : "UK Flag";
   
   const positionClasses = {
     "top-left": "top-1/4 -left-4",
