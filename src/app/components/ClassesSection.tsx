@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Button from './Button';
 
 // Class types data
@@ -27,7 +27,7 @@ const classTypes = [
   }
 ];
 
-const ClassesSection: React.FC = () => {
+const ClassesSection = () => {
   const [hoveredClassCards, setHoveredClassCards] = useState<{[key: number]: boolean}>({});
   
   const setClassCardHovered = (index: number, hovered: boolean) => {

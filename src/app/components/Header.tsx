@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import Button from './Button';
 import Logo from './Logo';
 
-const Header: React.FC = () => {
+const Header = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   

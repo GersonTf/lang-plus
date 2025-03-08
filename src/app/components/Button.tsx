@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ButtonHTMLAttributes, ReactNode, useState } from 'react';
+import { ButtonHTMLAttributes, ReactNode, useState } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;

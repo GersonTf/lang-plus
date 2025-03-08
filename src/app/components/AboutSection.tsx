@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 const benefits = [
   "Native speaker with online teaching certification",
   "Flexible scheduling across all time zones",
@@ -9,7 +7,7 @@ const benefits = [
   "Personalized attention and dedicated support"
 ];
 
-const AboutSection: React.FC = () => {
+const AboutSection = () => {
   return (
     <section 
       id="about" 

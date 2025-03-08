@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 interface LanguageFlagProps {
@@ -8,10 +8,7 @@ interface LanguageFlagProps {
   language: "spanish" | "uk";
 }
 
-const LanguageFlag: React.FC<LanguageFlagProps> = ({ 
-  position,
-  language
-}) => {
+const LanguageFlag: React.FC<LanguageFlagProps> = ({ position, language }) => {
   const [isHovered, setIsHovered] = useState(false);
   
   // Get the correct flag path based on language
@@ -36,16 +33,21 @@ const LanguageFlag: React.FC<LanguageFlagProps> = ({
     "bottom-right": "ring-2 ring-blue-400/30"
   };
   
+  const className = [
+    'absolute',
+    positionClasses[position],
+    'w-16 h-16',
+    bgClasses[position],
+    'rounded-full backdrop-blur-sm',
+    ringClasses[position],
+    'hidden md:block overflow-hidden',
+    'transition-all duration-300',
+    isHovered ? 'scale-110 -translate-y-1' : ''
+  ].join(' ').trim();
+
   return (
     <div 
-      className={`
-        absolute ${positionClasses[position]} w-16 h-16 
-        ${bgClasses[position]} rounded-full backdrop-blur-sm 
-        ${ringClasses[position]}
-        hidden md:block overflow-hidden
-        transition-all duration-300
-        ${isHovered ? 'scale-110 -translate-y-1' : ''}
-      `}
+      className={className}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{ aspectRatio: "1/1" }}

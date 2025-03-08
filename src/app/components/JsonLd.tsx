@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 const JsonLd: React.FC = () => {
   const structuredData = {
     '@context': 'https://schema.org',

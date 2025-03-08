@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 // Stats data
 const stats = [
   { number: "10+", label: "Years Experience" },
@@ -9,7 +7,7 @@ const stats = [
   { number: "4.9/5", label: "Student Rating" },
 ];
 
-const StatsSection: React.FC = () => {
+const StatsSection = () => {
   return (
     <section className="bg-section-accent shadow-standard rounded-xl border border-standard">
       <div className="p-6 sm:p-8 md:p-12 lg:p-16 text-center">

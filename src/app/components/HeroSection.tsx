@@ -1,11 +1,10 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import LanguageFlag from './LanguageFlag';
 import Button from './Button';
 
-const HeroSection: React.FC = () => {
+const HeroSection = () => {
   return (
     <section className="relative bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 overflow-hidden">
       {/* Background Pattern - Removed vertical lines */}

@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Button from './Button';
 
-const CtaSection: React.FC = () => {
+const CtaSection = () => {
   const [isEmailHovered, setIsEmailHovered] = useState(false);
 
   return (
