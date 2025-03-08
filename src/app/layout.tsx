@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  // Next.js will automatically look for these files in the app directory:
-  // - favicon.ico
-  // - icon.png
-  // - apple-icon.png
+  // Next.js automatically uses these files from the app directory:
+  // - favicon.ico (browser tab icon)
+  // - icon.png (app icon for PWA, manifest)
+  // - apple-icon.png (Apple touch icon)
   other: {
     'preconnect': ['https://fonts.googleapis.com'],
     'manifest': '/manifest.json'
