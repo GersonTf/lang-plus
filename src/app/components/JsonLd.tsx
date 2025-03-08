@@ -90,6 +90,17 @@ const JsonLd: React.FC = () => {
           },
           'query-input': 'required name=search_term_string'
         }
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://www.apluslanguages.eu'
+          }
+        ]
       }
     ]
   };

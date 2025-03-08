@@ -85,6 +85,11 @@ export const metadata: Metadata = {
   },
   category: 'education',
   applicationName: 'A Plus Languages',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
 }
 
 export default function RootLayout({
@@ -97,6 +102,7 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://www.apluslanguages.eu/" />
         <meta name="theme-color" content="#3b82f6" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body style={{ 
         margin: 0, 

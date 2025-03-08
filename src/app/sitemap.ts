@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 
 // Helper function to format date for the sitemap
 function formatDate(date: Date): string {
-  return date.toISOString().split('T')[0]
+  return date.toISOString()
 }
 
 // Get the current date for lastModified
@@ -15,6 +15,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     {
       url: baseUrl,
+      lastModified: formatDate(lastModified),
+      changeFrequency: 'weekly' as const,
+      priority: 1,
+    },
+    // Home page with trailing slash variant (for consistency)
+    {
+      url: `${baseUrl}/`,
       lastModified: formatDate(lastModified),
       changeFrequency: 'weekly' as const,
       priority: 1,
