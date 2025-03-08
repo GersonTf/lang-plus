@@ -22,7 +22,7 @@ const AboutSection: React.FC = () => {
           id="about-heading" 
           className="text-2xl sm:text-3xl text-blue-500 mb-6 sm:mb-8 md:mb-10 font-bold"
         >
-          Why Choose Aplus Languages?
+          Why Choose A Plus Languages?
         </h2>
         <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 sm:mb-10 md:mb-12 max-w-3xl">
           With over a decade of experience in online language teaching, I specialize in helping students achieve fluency through personalized, engaging virtual lessons. My proven methodology combines live conversation practice, interactive grammar instruction, and cultural immersion to ensure the best learning experience for every student.

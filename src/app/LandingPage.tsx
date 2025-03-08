@@ -13,8 +13,8 @@ import ScrollTopButton from './components/ScrollTopButton';
 
 // Add metadata for SEO
 const metadata = {
-  title: 'Aplus Languages - Expert Online English & Spanish Language Classes',
-  description: 'Transform your language skills with personalized online English and Spanish lessons from native-speaking teachers. Learn from anywhere in the world with Aplus Languages.',
+  title: 'A Plus Languages - Expert Online English & Spanish Language Classes',
+  description: 'Transform your language skills with personalized online English and Spanish lessons from native-speaking teachers. Learn from anywhere in the world with A Plus Languages.',
   keywords: 'online language classes, English lessons, Spanish lessons, language learning, online tutoring, ESL, language teacher',
 };
 

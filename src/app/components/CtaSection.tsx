@@ -64,7 +64,7 @@ const CtaSection: React.FC = () => {
           </a>
         </p>
         <p className="text-sm sm:text-base">
-          &copy; {new Date().getFullYear()} Aplus Languages. All rights reserved.
+          &copy; {new Date().getFullYear()} A Plus Languages. All rights reserved.
         </p>
       </footer>
     </div>

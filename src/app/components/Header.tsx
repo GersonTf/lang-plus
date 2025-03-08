@@ -23,7 +23,7 @@ const Header: React.FC = () => {
             <div className="overflow-hidden rounded-full">
               <Image
                 src="/images/aplusenglishLogo.jpg"
-                alt="Aplus Languages Logo"
+                alt="A Plus Languages Logo"
                 width={60}
                 height={60}
                 className="w-8 h-8 sm:w-10 sm:h-10 md:w-[60px] md:h-[60px] object-cover"
@@ -31,7 +31,7 @@ const Header: React.FC = () => {
               />
             </div>
             <span className="text-lg sm:text-xl md:text-2xl font-bold text-blue-500">
-              Aplus Languages
+              A Plus Languages
             </span>
           </div>
 

@@ -2,18 +2,14 @@
 
 import React from 'react';
 
-export default function JsonLd() {
-  const jsonLd = {
+const JsonLd: React.FC = () => {
+  const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
-    name: 'Aplus Languages',
-    description: 'Expert online English and Spanish language classes',
+    name: 'A Plus Languages',
+    description: 'Professional online English and Spanish language lessons for individuals and businesses.',
     url: 'https://www.apluslanguages.eu',
     logo: 'https://www.apluslanguages.eu/images/aplusenglishLogo.jpg',
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'EU'
-    },
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -28,7 +24,7 @@ export default function JsonLd() {
         description: 'Professional online English and Spanish classes available worldwide',
         provider: {
           '@type': 'EducationalOrganization',
-          name: 'Aplus Languages'
+          name: 'A Plus Languages'
         },
         serviceType: ['Language Learning', 'Online Education'],
         availableChannel: {
@@ -38,13 +34,15 @@ export default function JsonLd() {
         }
       }
     ]
-  }
+  };
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       suppressHydrationWarning={true}
     />
-  )
-} 
+  );
+};
+
+export default JsonLd; 

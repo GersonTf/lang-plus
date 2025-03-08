@@ -1,10 +1,10 @@
-# Aplus Languages
+# A Plus Languages
 
 Professional online language teaching platform offering personalized English and Spanish lessons.
 
 ## About
 
-Aplus Languages provides expert language instruction through:
+A Plus Languages provides expert language instruction through:
 - One-on-one online lessons
 - Small group classes
 - Business language training
@@ -34,4 +34,4 @@ Built with:
 - TypeScript
 - Modern web technologies for optimal performance
 
-© 2024 Aplus Languages. All rights reserved.
+© 2024 A Plus Languages. All rights reserved.
