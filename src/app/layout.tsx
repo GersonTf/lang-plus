@@ -9,8 +9,12 @@ export const metadata: Metadata = {
     template: '%s | A+ Languages',
     default: 'A+ Languages - Online Language Learning',
   },
-  description: 'Learn languages online with personalized lessons from expert teachers. Flexible scheduling and tailored curriculum for all levels.',
-  keywords: ['language learning', 'online classes', 'language courses', 'professional teachers', 'flexible schedule'],
+  description: 'Professional online English and Spanish language lessons with A+ Languages. Personalized classes for individuals and businesses with flexible scheduling and tailored curriculum for all levels.',
+  keywords: [
+    'language learning', 'online classes', 'language courses', 'professional teachers', 
+    'flexible schedule', 'A Plus Languages', 'A+ Languages', 'Aplus Languages', 'A + Languages',
+    'English lessons', 'Spanish lessons', 'online language teacher', 'learn languages online'
+  ],
   alternates: {
     canonical: '/',
   },
@@ -24,7 +28,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico' },
       { url: '/icon.png', type: 'image/png', sizes: '32x32' },
       { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
       { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
@@ -43,18 +47,18 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.apluslanguages.eu',
-    title: 'A+ Languages - Online Language Learning',
+    title: 'A+ Languages - Professional Online Language Learning',
     description: 'Learn languages online with personalized lessons from expert teachers. Flexible scheduling and tailored curriculum for all levels.',
     siteName: 'A+ Languages',
     images: [
       {
-        url: 'https://www.apluslanguages.eu/images/aplus-logo.svg',
-        width: 200,
-        height: 200,
+        url: '/images/aplus-logo.svg',
+        width: 512,
+        height: 512,
         alt: 'A Plus Languages Logo',
       },
       {
-        url: 'https://www.apluslanguages.eu/og-image.jpg', // Keep as fallback for platforms that don't support SVG
+        url: '/og-image.jpg', // Fallback for platforms that don't support SVG
         width: 1200,
         height: 630,
         alt: 'A Plus Languages',
@@ -65,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'A+ Languages - Online Language Learning',
     description: 'Learn languages online with personalized lessons from expert teachers.',
-    images: ['https://www.apluslanguages.eu/images/aplus-logo.svg'],
+    images: ['/images/aplus-logo.svg'],
   },
   robots: {
     index: true,

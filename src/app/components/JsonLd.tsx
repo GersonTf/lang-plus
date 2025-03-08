@@ -7,9 +7,16 @@ const JsonLd: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     name: 'A Plus Languages',
+    alternateName: ['A+ Languages', 'Aplus Languages', 'A + Languages', 'APlusLanguages'],
     description: 'Professional online English and Spanish language lessons for individuals and businesses.',
     url: 'https://www.apluslanguages.eu',
-    logo: 'https://www.apluslanguages.eu/images/aplus-logo.svg',
+    logo: '/images/aplus-logo.svg',
+    sameAs: [
+      'https://www.apluslanguages.eu',
+      // Add your social media profiles here if you have any
+      // 'https://facebook.com/apluslanguages',
+      // 'https://linkedin.com/company/apluslanguages',
+    ],
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -24,7 +31,8 @@ const JsonLd: React.FC = () => {
         description: 'Professional online English and Spanish classes available worldwide',
         provider: {
           '@type': 'EducationalOrganization',
-          name: 'A Plus Languages'
+          name: 'A Plus Languages',
+          alternateName: ['A+ Languages', 'Aplus Languages', 'A + Languages']
         },
         serviceType: ['Language Learning', 'Online Education'],
         availableChannel: {
