@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import Button from './Button';
+import Logo from './Logo';
 
 const Header: React.FC = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -21,16 +21,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between w-full">
           {/* Logo and Brand - left side */}
           <div className="flex items-center gap-2 sm:gap-3">
-            <div className="overflow-hidden rounded-full">
-              <Image
-                src="/images/aplusenglishLogo.jpg"
-                alt="A Plus Languages Logo"
-                width={60}
-                height={60}
-                className="w-8 h-8 sm:w-10 sm:h-10 md:w-[60px] md:h-[60px] object-cover"
-                priority
-              />
-            </div>
+            <Logo className="w-8 h-8 sm:w-10 sm:h-10 md:w-[55px] md:h-[55px]" />
             <span className="heading-primary text-lg sm:text-xl md:text-2xl">
               A Plus Languages
             </span>

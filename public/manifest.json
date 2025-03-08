@@ -8,9 +8,9 @@
   "theme_color": "#3b82f6",
   "icons": [
     {
-      "src": "/images/aplusenglishLogo.jpg",
+      "src": "/images/aplusenglishLogo.svg",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/svg+xml"
     }
   ]
 } 

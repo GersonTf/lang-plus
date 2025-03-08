@@ -22,6 +22,20 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', type: 'image/png', sizes: '180x180' },
+    ],
+    other: [
+      { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#1e3a8a' },
+    ],
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -31,12 +45,24 @@ export const metadata: Metadata = {
     siteName: 'A+ Languages',
     images: [
       {
-        url: 'https://www.apluslanguages.eu/og-image.jpg', // Update with your actual OG image
+        url: 'https://www.apluslanguages.eu/images/aplusenglishLogo.svg',
+        width: 200,
+        height: 200,
+        alt: 'A+ Languages Logo',
+      },
+      {
+        url: 'https://www.apluslanguages.eu/og-image.jpg', // Keep as fallback for platforms that don't support SVG
         width: 1200,
         height: 630,
         alt: 'A+ Languages',
       }
     ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'A+ Languages - Online Language Learning',
+    description: 'Learn languages online with personalized lessons from expert teachers.',
+    images: ['https://www.apluslanguages.eu/images/aplusenglishLogo.svg'],
   },
   robots: {
     index: true,
