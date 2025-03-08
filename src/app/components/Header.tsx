@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from './Button';
 
 const Header: React.FC = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -15,7 +16,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-white shadow-standard border-b border-standard">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 md:py-5">
         <div className="flex items-center justify-between w-full">
           {/* Logo and Brand - left side */}
@@ -30,31 +31,34 @@ const Header: React.FC = () => {
                 priority
               />
             </div>
-            <span className="text-lg sm:text-xl md:text-2xl font-bold text-blue-500">
+            <span className="heading-primary text-lg sm:text-xl md:text-2xl">
               A Plus Languages
             </span>
           </div>
 
           {/* Mobile menu button */}
-          <button 
-            className="sm:hidden flex items-center"
+          <Button 
+            variant="text"
+            size="xs"
+            className="sm:hidden p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              fill="none" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor" 
-              className="w-6 h-6 text-gray-600"
-            >
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+            icon={
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor" 
+                className="w-6 h-6 text-heading"
+              >
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            }
+          />
 
           {/* Desktop Navigation */}
           <nav className="hidden sm:flex items-center gap-4 md:gap-6 lg:gap-8">
@@ -65,11 +69,11 @@ const Header: React.FC = () => {
                 className={`
                   relative py-2 font-medium transition-all duration-200 ease-in-out
                   ${hoveredItem === item.name 
-                    ? 'text-blue-500 -translate-y-0.5' 
-                    : 'text-gray-600'
+                    ? 'text-heading -translate-y-0.5' 
+                    : 'text-body-light'
                   }
                   ${hoveredItem === item.name && item.name !== 'Contact' 
-                    ? 'border-b-2 border-blue-500' 
+                    ? 'border-b-2 border-primary-darker' 
                     : ''
                   }
                 `}
@@ -91,7 +95,7 @@ const Header: React.FC = () => {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="block py-2 text-gray-600 hover:text-blue-500 font-medium"
+                    className="block py-2 text-body hover:text-heading font-medium"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}

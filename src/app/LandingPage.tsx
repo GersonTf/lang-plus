@@ -49,7 +49,7 @@ const LandingPage: React.FC = () => {
         <link rel="canonical" href="https://www.apluslanguages.eu" />
       </Head>
 
-      <div className="flex flex-col min-h-screen bg-slate-50">
+      <div className="flex flex-col min-h-screen bg-white">
         {/* Header */}
         <Header />
         
@@ -58,7 +58,7 @@ const LandingPage: React.FC = () => {
         
         {/* Main Content */}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16 lg:py-24 w-full">
-          <div className="flex flex-col gap-12 sm:gap-16 md:gap-20 lg:gap-24">
+          <div className="flex flex-col gap-16 sm:gap-20 md:gap-28 lg:gap-32">
             {/* About Section */}
             <AboutSection />
             

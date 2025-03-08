@@ -1,13 +1,61 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   /* Core theme colors */
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
   --color-primary-darker: #1e40af;
-  --color-background: #f8fafc;
-  --color-text: #0f172a;
-  --color-text-muted: #475569;
+  --color-secondary: #f59e0b;
+  --color-secondary-dark: #d97706;
+  --color-highlight: #F4C635; /* Golden highlight color */
+  
+  /* Text colors */
+  --color-heading: #1e3a8a; /* blue-900 - darker for better contrast */
+  --color-text: #374151; /* gray-700 */
+  --color-text-light: #4b5563; /* gray-600 */
+  
+  /* Background colors */
+  --color-background: #ffffff; /* White background for page consistency */
+  --color-card: #ffffff; /* White for cards/foreground elements */
+  
+  /* Section background colors - more contrast for visual distinction */
+  --color-section-primary: #ffffff; /* White sections */
+  --color-section-secondary: #e5eeff; /* Light blue for alternating sections */
+  --color-section-accent: #dbeafe; /* Blue-100 for special sections */
+  --color-section-highlight: #fef3c7; /* Amber-50 for call to action */
+  
+  /* Border colors */
+  --color-border-standard: #e5e7eb; /* gray-200 for consistent borders */
+  
+  /* Shadow styles */
+  --shadow-standard: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Interactive elements */
+  --color-button: #2563eb; /* Darker blue for better contrast */
+  --color-button-hover: #1d4ed8; /* Even darker on hover */
+  --color-button-text: #ffffff; /* White text on colored buttons */
+  --color-button-secondary: #F4C635; /* Using exact highlight color */
+  --color-button-secondary-hover: #E2B52C; /* Slightly darker version of highlight */
+  --color-button-secondary-text: #1e293b; /* slate-800 for better contrast on yellow */
+}
+
+/* Direct highlight class for immediate application */
+.highlight-text {
+  color: #F4C635 !important;
+}
+
+.highlight-bg {
+  background-color: #F4C635 !important;
+}
+
+/* Standard shadow class */
+.shadow-standard {
+  box-shadow: var(--shadow-standard) !important;
+}
+
+.shadow-medium {
+  box-shadow: var(--shadow-medium) !important;
 }
 
 @layer base {
@@ -17,16 +65,48 @@
   }
   
   body {
-    @apply text-gray-800 bg-slate-50;
+    @apply text-gray-800;
+    color: var(--color-text);
+    background-color: var(--color-background);
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-gray-900;
+    @apply font-bold;
+    color: var(--color-heading);
     font-family: var(--font-roboto), system-ui, sans-serif;
+  }
+  
+  p {
+    color: var(--color-text);
   }
   
   a {
     @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .heading-primary {
+    @apply font-bold;
+    color: var(--color-heading);
+  }
+  
+  .text-primary {
+    color: var(--color-text);
+  }
+  
+  .text-secondary {
+    color: var(--color-text-light);
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-white;
+    background-color: var(--color-button);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-button-hover);
+    @apply shadow-lg -translate-y-1;
   }
 }
 

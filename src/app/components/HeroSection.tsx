@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import LanguageFlag from './LanguageFlag';
+import Button from './Button';
 
 const HeroSection: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const HeroSection: React.FC = () => {
           {/* Left Side: Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Personalized <span className="text-yellow-400">Online</span> Language Lessons
+              Personalized <span className="highlight-text">Online</span> Language Lessons
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl text-white mb-8 max-w-2xl md:max-w-none">
@@ -30,61 +31,49 @@ const HeroSection: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <a 
+              <Button
                 href="mailto:andy@a-plus-languages.com?subject=Inquiry%20about%20Classes"
-                className={`
-                  inline-flex items-center justify-center
-                  py-4 px-8 
-                  text-base font-semibold
-                  bg-yellow-500 hover:bg-yellow-400
-                  text-gray-900
-                  rounded-lg
-                  transition-all duration-300
-                  shadow-lg hover:shadow-xl hover:-translate-y-1
-                `}
+                variant="secondary"
+                size="md"
+                className="highlight-bg font-bold text-gray-900"
+                icon={
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                }
               >
-                <span>Book Free Consultation</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
+                Book Free Consultation
+              </Button>
               
-              <a 
+              <Button
                 href="#classes"
-                className="
-                  inline-flex items-center justify-center
-                  py-4 px-8 
-                  text-base font-semibold
-                  bg-transparent 
-                  text-white
-                  border-2 border-white hover:border-yellow-400 hover:text-yellow-400
-                  rounded-lg
-                  transition-all duration-300
-                "
+                variant="outline"
+                size="md"
+                className="border-white text-white hover:bg-white hover:text-primary-darker hover:border-white font-semibold"
               >
                 Explore Classes
-              </a>
+              </Button>
             </div>
             
             {/* Trust Indicators */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center md:justify-start items-center text-white">
               <div className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 mr-2" fill="#F4C635" viewBox="0 0 24 24" stroke="none">
+                  <path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z" />
                 </svg>
-                <span>Bilingual Native</span>
+                <span className="font-medium">Bilingual Native</span>
               </div>
               <div className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 mr-2" fill="#F4C635" viewBox="0 0 24 24" stroke="none">
+                  <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
                 </svg>
-                <span>Interactive Tools</span>
+                <span className="font-medium">Interactive Tools</span>
               </div>
               <div className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 mr-2" fill="#F4C635" viewBox="0 0 24 24" stroke="none">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                 </svg>
-                <span>5-Star Rated</span>
+                <span className="font-medium">5-Star Rated</span>
               </div>
             </div>
           </div>
@@ -132,7 +121,7 @@ const HeroSection: React.FC = () => {
       
       {/* Wave Divider */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg className="w-full h-auto text-slate-50 fill-current" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-full h-auto text-white fill-current" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg">
           <path d="M0,50 C150,20 350,0 500,20 C650,40 700,60 900,60 C1100,60 1250,40 1440,20 L1440,100 L0,100 Z"></path>
         </svg>
       </div>

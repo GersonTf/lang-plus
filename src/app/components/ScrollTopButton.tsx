@@ -1,41 +1,22 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import Button from './Button';
 
 interface ScrollTopButtonProps {
   onClick: () => void;
 }
 
 const ScrollTopButton: React.FC<ScrollTopButtonProps> = ({ onClick }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  
   return (
-    <button
+    <Button
       onClick={onClick}
-      className={`
-        fixed
-        bottom-6 sm:bottom-8 md:bottom-10
-        right-6 sm:right-8 md:right-10
-        w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
-        flex
-        items-center
-        justify-center
-        rounded-full
-        text-xl sm:text-2xl
-        z-50
-        transition-all
-        duration-300
-        text-white
-        ${isHovered 
-          ? 'bg-blue-600 shadow-lg -translate-y-1' 
-          : 'bg-blue-500 shadow-md opacity-90 translate-y-0'}
-      `}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      variant="primary"
+      className="fixed bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full text-lg sm:text-xl z-50 p-0"
       aria-label="Scroll to top of page"
     >
       <span className="relative -mt-0.5">↑</span>
-    </button>
+    </Button>
   );
 };
 
