@@ -2,10 +2,9 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import LanguageFlag from './LanguageFlag';
 
 const HeroSection: React.FC = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 overflow-hidden">
       {/* Background Pattern */}
@@ -52,7 +51,7 @@ const HeroSection: React.FC = () => {
               
               <a 
                 href="#classes"
-                className={`
+                className="
                   inline-flex items-center justify-center
                   py-4 px-8 
                   text-base font-semibold
@@ -61,9 +60,7 @@ const HeroSection: React.FC = () => {
                   border-2 border-white hover:border-yellow-300 hover:text-yellow-300
                   rounded-lg
                   transition-all duration-300
-                `}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
+                "
               >
                 Explore Classes
               </a>
@@ -95,26 +92,40 @@ const HeroSection: React.FC = () => {
           {/* Right Side: Image */}
           <div className="w-full md:w-1/2 relative mt-10 md:mt-0">
             <div className="relative w-full aspect-square max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-full bg-blue-400/20 backdrop-blur-sm transform -rotate-6"></div>
-              <div className="absolute inset-0 rounded-full border-2 border-dashed border-blue-300/30 animate-spin-slow"></div>
-              <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-br from-blue-100/20 to-white/10 backdrop-blur-md">
+              {/* Decorative background elements */}
+              <div className="absolute inset-0 rounded-full bg-blue-400/10 backdrop-blur-sm transform -rotate-3"></div>
+              
+              {/* Only keep the dotted animated ring */}
+              <div className="absolute inset-[10px] rounded-full border-2 border-dashed border-blue-300/20 animate-spin-slow"></div>
+              
+              {/* Main image container */}
+              <div className="absolute inset-5 rounded-full overflow-hidden bg-gradient-to-br from-blue-100/10 to-white/5 backdrop-blur-sm shadow-lg">
                 <Image
-                  src="/images/student-learning-online.svg"
+                  src="/images/student-learning-online.jpg"
                   alt="Online language learning"
                   fill
-                  className="object-cover p-8"
+                  className="object-cover object-center rounded-full p-1"
                   priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
+              
+              {/* Decorative glow effect */}
+              <div className="absolute inset-0 rounded-full bg-blue-500/5 blur-xl"></div>
             </div>
             
-            {/* Floating elements */}
-            <div className="absolute top-1/4 -left-4 w-20 h-20 bg-yellow-400/20 rounded-full backdrop-blur-sm animate-float-slow hidden md:block">
-              <div className="absolute inset-0 flex items-center justify-center text-yellow-500 text-2xl font-bold opacity-60">ES</div>
-            </div>
-            <div className="absolute bottom-1/4 -right-4 w-20 h-20 bg-blue-500/30 rounded-full backdrop-blur-sm animate-float-slow-reverse hidden md:block">
-              <div className="absolute inset-0 flex items-center justify-center text-blue-100 text-2xl font-bold opacity-60">EN</div>
-            </div>
+            {/* Language flag components */}
+            <LanguageFlag 
+              flagSrc="/images/Flag_of_Spain.svg"
+              position="top-left"
+              alt="Spanish Flag"
+            />
+            
+            <LanguageFlag 
+              flagSrc="/images/Flag_of_the_United_Kingdom.svg"
+              position="bottom-right"
+              alt="UK Flag"
+            />
           </div>
         </div>
       </div>

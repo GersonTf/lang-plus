@@ -39,7 +39,7 @@
   
   /* Custom animations */
   .animate-spin-slow {
-    animation: spin 15s linear infinite;
+    animation: spin 40s ease-in-out infinite;
   }
   
   .animate-float-slow {
