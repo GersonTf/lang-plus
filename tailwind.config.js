@@ -11,7 +11,7 @@ module.exports = {
         // Add your custom colors here
       },
       fontFamily: {
-        // Add your custom fonts here
+        sans: ['var(--font-roboto)', 'system-ui', 'sans-serif'],
       },
     },
   },

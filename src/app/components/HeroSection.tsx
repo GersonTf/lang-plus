@@ -6,14 +6,14 @@ import LanguageFlag from './LanguageFlag';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-blue-700 via-blue-800 to-indigo-900 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] bg-repeat bg-center"></div>
       </div>
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-blue-900/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-blue-950/80"></div>
       
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 md:py-32 lg:py-40">
@@ -21,10 +21,10 @@ const HeroSection: React.FC = () => {
           {/* Left Side: Content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Personalized <span className="text-yellow-300">Online</span> Language Lessons
+              Personalized <span className="text-yellow-400">Online</span> Language Lessons
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-8 max-w-2xl md:max-w-none">
+            <p className="text-base sm:text-lg md:text-xl text-white mb-8 max-w-2xl md:max-w-none">
               Transform your English or Spanish skills with one-on-one lessons from a bilingual native speaker. 
               Modern, interactive sessions using Google Meet and Miro boards, designed for individuals and businesses alike.
             </p>
@@ -36,8 +36,8 @@ const HeroSection: React.FC = () => {
                   inline-flex items-center justify-center
                   py-4 px-8 
                   text-base font-semibold
-                  bg-yellow-400 hover:bg-yellow-300
-                  text-gray-800
+                  bg-yellow-500 hover:bg-yellow-400
+                  text-gray-900
                   rounded-lg
                   transition-all duration-300
                   shadow-lg hover:shadow-xl hover:-translate-y-1
@@ -57,7 +57,7 @@ const HeroSection: React.FC = () => {
                   text-base font-semibold
                   bg-transparent 
                   text-white
-                  border-2 border-white hover:border-yellow-300 hover:text-yellow-300
+                  border-2 border-white hover:border-yellow-400 hover:text-yellow-400
                   rounded-lg
                   transition-all duration-300
                 "
@@ -67,7 +67,7 @@ const HeroSection: React.FC = () => {
             </div>
             
             {/* Trust Indicators */}
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center md:justify-start items-center text-blue-100">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center md:justify-start items-center text-white">
               <div className="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
@@ -93,13 +93,13 @@ const HeroSection: React.FC = () => {
           <div className="w-full md:w-1/2 relative mt-10 md:mt-0">
             <div className="relative w-full aspect-square max-w-md mx-auto">
               {/* Decorative background elements */}
-              <div className="absolute inset-0 rounded-full bg-blue-400/10 backdrop-blur-sm transform -rotate-3"></div>
+              <div className="absolute inset-0 rounded-full bg-blue-300/10 backdrop-blur-sm transform -rotate-3"></div>
               
               {/* Only keep the dotted animated ring */}
-              <div className="absolute inset-[10px] rounded-full border-2 border-dashed border-blue-300/20 animate-spin-slow"></div>
+              <div className="absolute inset-[10px] rounded-full border-2 border-dashed border-blue-200/30 animate-spin-slow"></div>
               
               {/* Main image container */}
-              <div className="absolute inset-5 rounded-full overflow-hidden bg-gradient-to-br from-blue-100/10 to-white/5 backdrop-blur-sm shadow-lg">
+              <div className="absolute inset-5 rounded-full overflow-hidden bg-gradient-to-br from-blue-200/20 to-white/10 backdrop-blur-sm shadow-lg">
                 <Image
                   src="/images/student-learning-online.jpg"
                   alt="Online language learning"
@@ -111,7 +111,7 @@ const HeroSection: React.FC = () => {
               </div>
               
               {/* Decorative glow effect */}
-              <div className="absolute inset-0 rounded-full bg-blue-500/5 blur-xl"></div>
+              <div className="absolute inset-0 rounded-full bg-blue-400/5 blur-xl"></div>
             </div>
             
             {/* Language flag components */}

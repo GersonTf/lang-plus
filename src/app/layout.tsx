@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import JsonLd from './components/JsonLd'
+import { roboto } from './fonts'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.apluslanguages.eu'),
@@ -57,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={roboto.variable}>
       <body style={{ 
         margin: 0, 
         padding: 0, 
