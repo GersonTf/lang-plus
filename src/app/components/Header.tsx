@@ -11,11 +11,11 @@ const Header = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, locale } = useTranslation();
-  
+
   const navItems = [
     { name: t.navigation.about, href: '#about' },
     { name: t.navigation.classes, href: '#classes' },
-    { name: t.navigation.contact, href: 'mailto:andy@a-plus-languages.com' }
+    { name: t.navigation.contact, href: 'mailto:andy@a-plus-languages.com' },
   ];
 
   return (
@@ -25,32 +25,40 @@ const Header = () => {
           {/* Logo and Brand - left side */}
           <div className="flex items-center gap-2 sm:gap-3">
             <Logo className="w-12 h-12 sm:w-16 sm:h-16 md:w-[70px] md:h-[70px]" />
-            <span className="heading-primary text-lg sm:text-xl md:text-2xl">
-              {t.header.title}
-            </span>
+            <span className="heading-primary text-lg sm:text-xl md:text-2xl">{t.header.title}</span>
           </div>
 
           {/* Mobile menu button */}
           <div className="flex items-center sm:hidden">
             <LanguageSelector currentLocale={locale} />
-            <Button 
+            <Button
               variant="text"
               size="xs"
               className="p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               icon={
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor" 
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                   className="w-6 h-6 text-heading"
                 >
                   {mobileMenuOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
                   )}
                 </svg>
               }
@@ -59,19 +67,17 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden sm:flex items-center gap-4 md:gap-6 lg:gap-8">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={`
                   relative py-2 font-medium transition-all duration-200 ease-in-out
-                  ${hoveredItem === item.name 
-                    ? 'text-heading -translate-y-0.5' 
-                    : 'text-body-light'
-                  }
-                  ${hoveredItem === item.name && item.name !== t.navigation.contact 
-                    ? 'border-b-2 border-primary-darker' 
-                    : ''
+                  ${hoveredItem === item.name ? 'text-heading -translate-y-0.5' : 'text-body-light'}
+                  ${
+                    hoveredItem === item.name && item.name !== t.navigation.contact
+                      ? 'border-b-2 border-primary-darker'
+                      : ''
                   }
                 `}
                 onMouseEnter={() => setHoveredItem(item.name)}
@@ -89,7 +95,7 @@ const Header = () => {
         {mobileMenuOpen && (
           <nav className="sm:hidden pt-4 pb-3 border-t border-gray-200 mt-3">
             <ul className="flex flex-col space-y-3">
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
@@ -108,4 +114,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;

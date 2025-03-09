@@ -1,0 +1,17 @@
+# Build artifacts
+.next/
+out/
+build/
+dist/
+
+# Package manager
+node_modules/
+
+# Generated files
+next-env.d.ts
+next-sitemap.config.js
+sitemap*.xml
+robots.txt
+
+# Public assets
+public/ 

@@ -1,12 +1,12 @@
-import type { Metadata, Viewport } from 'next'
-import './globals.css'
-import { roboto } from './fonts'
+import type { Metadata, Viewport } from 'next';
+import './globals.css';
+import { roboto } from './fonts';
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-}
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.apluslanguages.eu'),
@@ -14,15 +14,35 @@ export const metadata: Metadata = {
     template: '%s | A+ Languages',
     default: 'A+ Languages - Personalized English and Spanish Classes with Native Speaker',
   },
-  description: 'Professional online English and Spanish language lessons with A+ Languages. Personalized classes for individuals and businesses with a native speaker teacher. Online lessons using modern tools.',
+  description:
+    'Professional online English and Spanish language lessons with A+ Languages. Personalized classes for individuals and businesses with a native speaker teacher. Online lessons using modern tools.',
   keywords: [
-    'language learning', 'online classes', 'language courses', 'professional teachers', 
-    'flexible schedule', 'A Plus Languages', 'A+ Languages', 'Aplus Languages', 'A + Languages',
-    'English lessons', 'Spanish lessons', 'online language teacher', 'learn languages online',
-    'English classes for companies', 'Spanish classes for companies', 'English for business',
-    'Spanish for business', 'personalized language classes', 'native speaker teacher',
-    'online language learning', 'professional language courses', 'one-on-one language lessons',
-    'business English', 'business Spanish', 'certified language teacher', 'tailored language courses'
+    'language learning',
+    'online classes',
+    'language courses',
+    'professional teachers',
+    'flexible schedule',
+    'A Plus Languages',
+    'A+ Languages',
+    'Aplus Languages',
+    'A + Languages',
+    'English lessons',
+    'Spanish lessons',
+    'online language teacher',
+    'learn languages online',
+    'English classes for companies',
+    'Spanish classes for companies',
+    'English for business',
+    'Spanish for business',
+    'personalized language classes',
+    'native speaker teacher',
+    'online language learning',
+    'professional language courses',
+    'one-on-one language lessons',
+    'business English',
+    'business Spanish',
+    'certified language teacher',
+    'tailored language courses',
   ],
   alternates: {
     canonical: '/',
@@ -40,19 +60,45 @@ export const metadata: Metadata = {
   // - icon.png (app icon for PWA, manifest)
   // - apple-icon.png (Apple touch icon)
   other: {
-    'preconnect': ['https://fonts.googleapis.com'],
-    'manifest': '/manifest.json',
+    preconnect: ['https://fonts.googleapis.com'],
+    manifest: '/manifest.json',
     // Additional descriptions for better SEO
-    'description1': 'Professional personalized English and Spanish classes with a native speaker teacher. Online lessons for companies and individuals.',
-    'description2': 'A+ Languages: English and Spanish classes for companies with certified native teacher. Personalized online curriculum.',
-    'description3': 'Aplus Languages offers professional language classes for companies. Online lessons with native speaker teacher.'
+    description1:
+      'Professional personalized English and Spanish classes with a native speaker teacher. Online lessons for companies and individuals.',
+    description2:
+      'A+ Languages: English and Spanish classes for companies with certified native teacher. Personalized online curriculum.',
+    description3:
+      'Aplus Languages offers professional language classes for companies. Online lessons with native speaker teacher.',
+  },
+  icons: {
+    icon: '/icon-192.png',
+    shortcut: '/icon-192.png',
+    apple: '/icon-192.png',
+    other: [
+      {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/icon-192.png',
+      },
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+        color: '#3b82f6',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '512x512',
+        url: '/icon-512.png',
+      },
+    ],
   },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
     url: 'https://www.apluslanguages.eu',
     title: 'A+ Languages - English and Spanish Classes with Native Speaker',
-    description: 'Professional personalized English and Spanish classes with a native speaker teacher. Online lessons for companies and individuals.',
+    description:
+      'Professional personalized English and Spanish classes with a native speaker teacher. Online lessons for companies and individuals.',
     siteName: 'A+ Languages | A Plus Languages | Personalized Language Learning',
     images: [
       {
@@ -66,17 +112,18 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: 'A Plus Languages',
-      }
+      },
     ],
     alternateLocale: ['en_GB', 'es_ES', 'zh_CN', 'ja_JP', 'ko_KR'],
   },
   twitter: {
     card: 'summary',
     title: 'A+ Languages - Personalized English and Spanish Classes for Companies',
-    description: 'A+ Languages: English and Spanish classes for companies with certified native teacher. Personalized online curriculum.',
+    description:
+      'A+ Languages: English and Spanish classes for companies with certified native teacher. Personalized online curriculum.',
     images: ['/images/aplus-logo.svg'],
     site: '@AplusLanguages',
-    creator: '@AplusLanguages'
+    creator: '@AplusLanguages',
   },
   robots: {
     index: true,
@@ -91,49 +138,52 @@ export const metadata: Metadata = {
   },
   category: 'education',
   applicationName: 'A Plus Languages',
-}
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   // JSON-LD structured data for the root layout
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
     name: 'A Plus Languages',
     alternateName: ['A+ Languages', 'Aplus Languages', 'A + Languages', 'APlusLanguages'],
-    description: 'Professional online English and Spanish language lessons with a native speaker teacher of both languages. Personalized classes for individuals and businesses.',
+    description:
+      'Professional online English and Spanish language lessons with a native speaker teacher of both languages. Personalized classes for individuals and businesses.',
     url: 'https://www.apluslanguages.eu',
     logo: '/images/aplus-logo.svg',
-    keywords: 'English classes, Spanish classes, personalized language learning, native speaker teacher, online classes, classes for companies, business English, business Spanish',
-    sameAs: [
-      'https://www.apluslanguages.eu',
-    ],
+    keywords:
+      'English classes, Spanish classes, personalized language learning, native speaker teacher, online classes, classes for companies, business English, business Spanish',
+    sameAs: ['https://www.apluslanguages.eu'],
     '@graph': [
       {
         '@type': 'Service',
         name: 'Online Language Classes',
-        description: 'Professional online English and Spanish classes with a native speaker teacher. Fully online with modern tools like Google Meet and Miro boards. Personalized curriculum for individuals and companies.',
+        description:
+          'Professional online English and Spanish classes with a native speaker teacher. Fully online with modern tools like Google Meet and Miro boards. Personalized curriculum for individuals and companies.',
         provider: {
           '@type': 'EducationalOrganization',
           name: 'A Plus Languages',
-          alternateName: ['A+ Languages', 'Aplus Languages', 'A + Languages']
+          alternateName: ['A+ Languages', 'Aplus Languages', 'A + Languages'],
         },
-        serviceType: ['Language Learning', 'Online Education', 'Business English', 'Business Spanish', 'Personalized Language Courses'],
+        serviceType: [
+          'Language Learning',
+          'Online Education',
+          'Business English',
+          'Business Spanish',
+          'Personalized Language Courses',
+        ],
         availableChannel: {
           '@type': 'ServiceChannel',
           serviceType: 'Online',
-          availableLanguage: ['English', 'Spanish']
+          availableLanguage: ['English', 'Spanish'],
         },
         audience: {
           '@type': 'Audience',
-          audienceType: 'Companies and individuals seeking language learning'
+          audienceType: 'Companies and individuals seeking language learning',
         },
         serviceOutput: {
           '@type': 'Thing',
-          name: 'Language Proficiency'
+          name: 'Language Proficiency',
         },
         offers: {
           '@type': 'Offer',
@@ -141,8 +191,8 @@ export default function RootLayout({
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
           description: 'Free consultation available to discuss your language learning needs',
-          category: 'Personalized language classes with native speaker'
-        }
+          category: 'Personalized language classes with native speaker',
+        },
       },
       {
         '@type': 'WebSite',
@@ -152,34 +202,37 @@ export default function RootLayout({
           '@type': 'SearchAction',
           target: {
             '@type': 'EntryPoint',
-            urlTemplate: 'https://www.apluslanguages.eu/search?q={search_term_string}'
+            urlTemplate: 'https://www.apluslanguages.eu/search?q={search_term_string}',
           },
-          'query-input': 'required name=search_term_string'
+          'query-input': 'required name=search_term_string',
         },
-        description: 'Professional online English and Spanish language lessons with a native speaker teacher of both languages. Classes for companies and individuals.'
-      }
-    ]
+        description:
+          'Professional online English and Spanish language lessons with a native speaker teacher of both languages. Classes for companies and individuals.',
+      },
+    ],
   };
-  
+
   return (
     <html lang="en" className={roboto.variable}>
       <head>
         {/* Primary Meta Tags */}
         <link rel="canonical" href="https://www.apluslanguages.eu/" />
         <meta name="theme-color" content="#3b82f6" />
-        
+
         {/* Web App Manifest */}
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body style={{ 
-        margin: 0, 
-        padding: 0, 
-        border: 'none', 
-        outline: 'none',
-        overflowX: 'hidden' 
-      }}>
+      <body
+        style={{
+          margin: 0,
+          padding: 0,
+          border: 'none',
+          outline: 'none',
+          overflowX: 'hidden',
+        }}
+      >
         {children}
-        
+
         {/* JSON-LD structured data */}
         <script
           type="application/ld+json"
@@ -188,5 +241,5 @@ export default function RootLayout({
         />
       </body>
     </html>
-  )
+  );
 }

@@ -8,20 +8,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': 'var(--color-primary)',
+        primary: 'var(--color-primary)',
         'primary-dark': 'var(--color-primary-dark)',
         'primary-darker': 'var(--color-primary-darker)',
-        'secondary': 'var(--color-secondary)',
+        secondary: 'var(--color-secondary)',
         'secondary-dark': 'var(--color-secondary-dark)',
-        'highlight': 'var(--color-highlight)',
-        'heading': 'var(--color-heading)',
-        'body': 'var(--color-text)',
+        highlight: 'var(--color-highlight)',
+        heading: 'var(--color-heading)',
+        body: 'var(--color-text)',
         'body-light': 'var(--color-text-light)',
       },
       backgroundColor: {
-        'page': 'var(--color-background)',
-        'card': 'var(--color-card)',
-        'button': 'var(--color-button)',
+        page: 'var(--color-background)',
+        card: 'var(--color-card)',
+        button: 'var(--color-button)',
         'button-hover': 'var(--color-button-hover)',
         'button-secondary': 'var(--color-button-secondary)',
         'button-secondary-hover': 'var(--color-button-secondary-hover)',
@@ -31,21 +31,21 @@ module.exports = {
         'section-highlight': 'var(--color-section-highlight)',
       },
       textColor: {
-        'button': 'var(--color-button)',
+        button: 'var(--color-button)',
         'button-hover': 'var(--color-button-hover)',
         'button-text': 'var(--color-button-text)',
         'button-secondary-text': 'var(--color-button-secondary-text)',
-        'highlight': 'var(--color-highlight)',
+        highlight: 'var(--color-highlight)',
       },
       borderColor: {
-        'button': 'var(--color-button)',
+        button: 'var(--color-button)',
         'button-hover': 'var(--color-button-hover)',
-        'highlight': 'var(--color-highlight)',
-        'standard': 'var(--color-border-standard)',
+        highlight: 'var(--color-highlight)',
+        standard: 'var(--color-border-standard)',
       },
       boxShadow: {
-        'standard': 'var(--shadow-standard)',
-        'medium': 'var(--shadow-medium)',
+        standard: 'var(--shadow-standard)',
+        medium: 'var(--shadow-medium)',
       },
       fontFamily: {
         sans: ['var(--font-roboto)', 'system-ui', 'sans-serif'],
@@ -53,4 +53,4 @@ module.exports = {
     },
   },
   plugins: [],
-} 
+};

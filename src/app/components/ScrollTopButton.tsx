@@ -19,4 +19,4 @@ const ScrollTopButton: React.FC<ScrollTopButtonProps> = ({ onClick }) => {
   );
 };
 
-export default ScrollTopButton; 
+export default ScrollTopButton;

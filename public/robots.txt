@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api
+Disallow: /_next
+Disallow: /static
+
+# Host
+Host: https://www.apluslanguages.eu
+
+# Sitemaps
+Sitemap: https://www.apluslanguages.eu/sitemap.xml
+Sitemap: https://www.apluslanguages.eu/server-sitemap.xml

@@ -11,10 +11,13 @@ const StatsSection = () => {
         <h2 className="heading-primary text-2xl sm:text-3xl mb-8 sm:mb-12 md:mb-16 font-bold">
           {t.stats.title}
         </h2>
-        
+
         <div className="flex flex-wrap justify-center gap-8 sm:gap-12 md:gap-16 lg:gap-24">
           {t.stats.items.map((stat: { number: string; label: string }, index: number) => (
-            <div key={index} className="text-center mb-6 sm:mb-8 md:mb-10 px-4 sm:px-6 md:px-8 w-full sm:w-auto">
+            <div
+              key={index}
+              className="text-center mb-6 sm:mb-8 md:mb-10 px-4 sm:px-6 md:px-8 w-full sm:w-auto"
+            >
               <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-heading mb-2 sm:mb-3 md:mb-4">
                 {stat.number}
               </div>
@@ -29,4 +32,4 @@ const StatsSection = () => {
   );
 };
 
-export default StatsSection; 
+export default StatsSection;

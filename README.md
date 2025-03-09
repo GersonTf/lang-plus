@@ -5,6 +5,7 @@ Professional online language teaching platform offering personalized English and
 ## About
 
 A Plus Languages provides expert language instruction through:
+
 - One-on-one online lessons
 - Small group classes
 - Business language training
@@ -29,6 +30,7 @@ Email: andy@a-plus-languages.com
 ## Technology
 
 Built with:
+
 - Next.js 15
 - React 19
 - TypeScript

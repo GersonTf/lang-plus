@@ -9,10 +9,10 @@ const nextConfig = {
     ],
     // Enable standard image optimization
     formats: ['image/webp'],
-    
+
     // Cache optimized images for 1 week
     minimumCacheTTL: 60 * 60 * 24 * 7,
-    
+
     // Enable SVG support
     dangerouslyAllowSVG: true,
   },
@@ -22,6 +22,6 @@ const nextConfig = {
     // ssr and displayName are configured by default
     styledComponents: false,
   },
-}
+};
 
-module.exports = nextConfig 
+module.exports = nextConfig;
