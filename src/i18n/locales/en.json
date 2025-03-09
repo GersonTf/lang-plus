@@ -1,0 +1,78 @@
+{
+  "navigation": {
+    "about": "About",
+    "classes": "Classes",
+    "contact": "Contact"
+  },
+  "header": {
+    "title": "A Plus Languages",
+    "langSwitch": "Language"
+  },
+  "hero": {
+    "title": "Personalized <highlight>Online</highlight> Language Lessons",
+    "description": "Transform your English or Spanish skills with one-on-one lessons from a bilingual native speaker. Modern, interactive sessions using Google Meet and Miro boards, designed for individuals and businesses alike.",
+    "buttons": {
+      "consultation": "Book Free Consultation",
+      "explore": "Explore Classes"
+    },
+    "trust": {
+      "bilingual": "Bilingual Native",
+      "tools": "Interactive Tools",
+      "rating": "5-Star Rated"
+    }
+  },
+  "about": {
+    "title": "Why Choose A Plus Languages?",
+    "description": "With over a decade of experience in online language teaching, I specialize in helping students achieve fluency through personalized, engaging virtual lessons. My proven methodology combines live conversation practice, interactive grammar instruction, and cultural immersion to ensure the best learning experience for every student.",
+    "benefits": [
+      "Native speaker with online teaching certification",
+      "Flexible scheduling across all time zones",
+      "Proven success with hundreds of online students",
+      "Personalized attention and dedicated support"
+    ]
+  },
+  "classes": {
+    "title": "Classes Offered",
+    "types": [
+      {
+        "title": "Online One-on-one Lessons",
+        "description": "Accelerate your learning with my personalized attention and customized lesson plans. Perfect for focused language acquisition with the convenience of learning from home."
+      },
+      {
+        "title": "Virtual Group Classes",
+        "description": "Learn collaboratively in small online groups of 2-4 students. Practice real-world conversations and share cultural insights while enjoying reduced rates."
+      },
+      {
+        "title": "Online Business Language Training",
+        "description": "Master professional communication skills for the digital workplace. Tailored training for remote teams, international business relations, and virtual networking."
+      },
+      {
+        "title": "Virtual Conversation Practice",
+        "description": "Build confidence through guided online discussions, interactive pronunciation workshops, and cultural exchange. Practice with a native speaker from the comfort of your home."
+      }
+    ],
+    "cta": {
+      "title": "Ready to Start Your Language Journey?",
+      "description": "Book your <strong>free consultation</strong> today and discover how my personalized approach can help you achieve your language goals. Limited spots available!",
+      "button": "Schedule Free Consultation",
+      "benefits": "✓ No commitment required   ✓ Flexible scheduling   ✓ Personalized learning plan"
+    }
+  },
+  "stats": {
+    "title": "Our Impact",
+    "items": [
+      { "number": "10+", "label": "Years Experience" },
+      { "number": "1000+", "label": "Students Taught" },
+      { "number": "4.9/5", "label": "Student Rating" }
+    ]
+  },
+  "cta": {
+    "title": "Start Your Language Journey Today",
+    "description": "Whether you're a beginner or looking to refine your skills, our personalized approach will help you achieve fluency faster than traditional methods.",
+    "button": "Get Started Now"
+  },
+  "footer": {
+    "contact": "Contact us at",
+    "copyright": "© {year} A Plus Languages. All rights reserved."
+  }
+} 

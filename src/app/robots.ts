@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { locales } from '@/i18n'
 
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = 'https://www.apluslanguages.eu'
@@ -7,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', ...locales.map(locale => `/${locale}`)],
         disallow: [
           '/_next/',
           '/api/',
@@ -17,7 +18,7 @@ export default function robots(): MetadataRoute.Robots {
       },
       {
         userAgent: 'Googlebot',
-        allow: '/',
+        allow: ['/', ...locales.map(locale => `/${locale}`)],
         disallow: [
           '/_next/',
           '/api/',

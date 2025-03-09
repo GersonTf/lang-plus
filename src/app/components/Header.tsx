@@ -4,15 +4,18 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Button from './Button';
 import Logo from './Logo';
+import LanguageSelector from './LanguageSelector';
+import { useTranslation } from '../contexts/TranslationContext';
 
 const Header = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t, locale } = useTranslation();
   
   const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Classes', href: '#classes' },
-    { name: 'Contact', href: 'mailto:andy@a-plus-languages.com' }
+    { name: t.navigation.about, href: '#about' },
+    { name: t.navigation.classes, href: '#classes' },
+    { name: t.navigation.contact, href: 'mailto:andy@a-plus-languages.com' }
   ];
 
   return (
@@ -23,33 +26,36 @@ const Header = () => {
           <div className="flex items-center gap-2 sm:gap-3">
             <Logo className="w-12 h-12 sm:w-16 sm:h-16 md:w-[70px] md:h-[70px]" />
             <span className="heading-primary text-lg sm:text-xl md:text-2xl">
-              A Plus Languages
+              {t.header.title}
             </span>
           </div>
 
           {/* Mobile menu button */}
-          <Button 
-            variant="text"
-            size="xs"
-            className="sm:hidden p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            icon={
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor" 
-                className="w-6 h-6 text-heading"
-              >
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            }
-          />
+          <div className="flex items-center sm:hidden">
+            <LanguageSelector currentLocale={locale} />
+            <Button 
+              variant="text"
+              size="xs"
+              className="p-2"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              icon={
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor" 
+                  className="w-6 h-6 text-heading"
+                >
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              }
+            />
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden sm:flex items-center gap-4 md:gap-6 lg:gap-8">
@@ -63,7 +69,7 @@ const Header = () => {
                     ? 'text-heading -translate-y-0.5' 
                     : 'text-body-light'
                   }
-                  ${hoveredItem === item.name && item.name !== 'Contact' 
+                  ${hoveredItem === item.name && item.name !== t.navigation.contact 
                     ? 'border-b-2 border-primary-darker' 
                     : ''
                   }
@@ -75,6 +81,7 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            <LanguageSelector currentLocale={locale} />
           </nav>
         </div>
 

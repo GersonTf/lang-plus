@@ -1,0 +1,78 @@
+{
+  "navigation": {
+    "about": "Acerca de",
+    "classes": "Clases",
+    "contact": "Contacto"
+  },
+  "header": {
+    "title": "A Plus Languages",
+    "langSwitch": "Idioma"
+  },
+  "hero": {
+    "title": "Clases de idiomas <highlight>online</highlight> personalizadas",
+    "description": "Mejora tu inglés o español con clases personalizadas de un profesor nativo bilingüe. Sesiones modernas e interactivas usando Google Meet y tableros Miro, diseñadas tanto para particulares como para empresas.",
+    "buttons": {
+      "consultation": "Reservar consulta gratuita",
+      "explore": "Explorar clases"
+    },
+    "trust": {
+      "bilingual": "Profesor nativo bilingüe",
+      "tools": "Herramientas interactivas",
+      "rating": "Calificación 5 estrellas"
+    }
+  },
+  "about": {
+    "title": "¿Por qué elegir A Plus Languages?",
+    "description": "Con más de una década de experiencia en enseñanza de idiomas online, me especializo en ayudar a los estudiantes a alcanzar fluidez a través de clases virtuales personalizadas y atractivas. Mi metodología probada combina práctica de conversación en vivo, instrucción gramatical interactiva e inmersión cultural para garantizar la mejor experiencia de aprendizaje para cada estudiante.",
+    "benefits": [
+      "Profesor nativo con certificación de enseñanza online",
+      "Horarios flexibles para todas las zonas horarias",
+      "Éxito comprobado con cientos de estudiantes online",
+      "Atención personalizada y apoyo dedicado"
+    ]
+  },
+  "classes": {
+    "title": "Clases ofrecidas",
+    "types": [
+      {
+        "title": "Clases individuales online",
+        "description": "Acelera tu aprendizaje con mi atención personalizada y planes de lecciones adaptados. Perfecto para una adquisición del idioma enfocada con la comodidad de aprender desde casa."
+      },
+      {
+        "title": "Clases grupales virtuales",
+        "description": "Aprende de forma colaborativa en pequeños grupos online de 2-4 estudiantes. Practica conversaciones del mundo real y comparte conocimientos culturales mientras disfrutas de tarifas reducidas."
+      },
+      {
+        "title": "Formación lingüística para empresas",
+        "description": "Domina habilidades de comunicación profesional para el entorno digital. Formación a medida para equipos remotos, relaciones comerciales internacionales y networking virtual."
+      },
+      {
+        "title": "Práctica de conversación virtual",
+        "description": "Desarrolla confianza a través de discusiones online guiadas, talleres interactivos de pronunciación e intercambio cultural. Practica con un hablante nativo desde la comodidad de tu hogar."
+      }
+    ],
+    "cta": {
+      "title": "¿Listo para comenzar tu viaje lingüístico?",
+      "description": "Reserva tu <strong>consulta gratuita</strong> hoy y descubre cómo mi enfoque personalizado puede ayudarte a alcanzar tus objetivos lingüísticos. ¡Plazas limitadas!",
+      "button": "Programar consulta gratuita",
+      "benefits": "✓ Sin compromiso requerido   ✓ Horarios flexibles   ✓ Plan de aprendizaje personalizado"
+    }
+  },
+  "stats": {
+    "title": "Nuestro impacto",
+    "items": [
+      { "number": "10+", "label": "Años de experiencia" },
+      { "number": "1000+", "label": "Estudiantes enseñados" },
+      { "number": "4.9/5", "label": "Valoración de estudiantes" }
+    ]
+  },
+  "cta": {
+    "title": "Comienza tu viaje lingüístico hoy",
+    "description": "Ya seas principiante o quieras perfeccionar tus habilidades, nuestro enfoque personalizado te ayudará a lograr fluidez más rápido que los métodos tradicionales.",
+    "button": "Comenzar ahora"
+  },
+  "footer": {
+    "contact": "Contáctanos en",
+    "copyright": "© {year} A Plus Languages. Todos los derechos reservados."
+  }
+} 
