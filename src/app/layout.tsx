@@ -2,12 +2,19 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { roboto } from './fonts';
 
+/**
+ * Viewport configuration for responsive design
+ */
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
 };
 
+/**
+ * Default metadata for the application
+ * This provides fallback metadata for pages that don't generate their own
+ */
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.apluslanguages.eu'),
   title: {
@@ -140,8 +147,12 @@ export const metadata: Metadata = {
   applicationName: 'A Plus Languages',
 };
 
+/**
+ * Root layout component that wraps all pages
+ * Provides the HTML structure and global styles
+ */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // JSON-LD structured data for the root layout
+  // JSON-LD structured data for search engines
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',

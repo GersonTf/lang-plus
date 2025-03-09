@@ -9,7 +9,10 @@ import StatsSection from '../components/StatsSection';
 import CtaSection from '../components/CtaSection';
 import ScrollTopButton from '../components/ScrollTopButton';
 
-// Client components use synchronous params
+/**
+ * Localized homepage component that displays content in the current language
+ * Renders the main sections of the site and handles scroll-to-top functionality
+ */
 export default function LocalizedHomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 

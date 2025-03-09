@@ -5,12 +5,18 @@ import { TranslationProvider } from '../contexts/TranslationContext';
 import { getBaseOpenGraph, getBaseTwitter, baseRobots } from '../shared-metadata';
 import LangAttributeSetter from '../components/LangAttributeSetter';
 
+/**
+ * Viewport configuration for responsive design
+ */
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
 };
 
+/**
+ * Generate metadata for the page based on the current language
+ */
 export async function generateMetadata({
   params,
 }: {
@@ -28,7 +34,7 @@ export async function generateMetadata({
     translations.hero.description ||
     'Professional online English and Spanish language lessons with A+ Languages. Personalized classes for individuals and businesses with flexible scheduling and tailored curriculum for all levels.';
 
-  // Enhanced SEO descriptions - multiple variations for better keyword matching
+  // Multiple descriptions for better SEO and keyword targeting
   const enhancedDescriptions = [
     description,
     `Professional personalized ${locale === 'es' ? 'Spanish and English' : 'English and Spanish'} classes with a native speaker teacher. Online lessons for companies and individuals.`,
@@ -41,7 +47,6 @@ export async function generateMetadata({
     title: {
       template: `%s | ${title}`,
       default: pageTitle,
-      // Add alternate titles for better SEO
       absolute: `${locale === 'es' ? 'Spanish' : 'English'} Classes with Native Speaker | ${title}`,
     },
     description: enhancedDescriptions[0],
@@ -94,7 +99,6 @@ export async function generateMetadata({
     other: {
       preconnect: ['https://fonts.googleapis.com'],
       manifest: '/manifest.json',
-      // Add alternate descriptions for better SEO
       description1: enhancedDescriptions[1],
       description2: enhancedDescriptions[2],
       description3: enhancedDescriptions[3],
@@ -121,7 +125,6 @@ export async function generateMetadata({
         },
       ],
     },
-    // Use the base utility functions but override specific fields
     openGraph: getBaseOpenGraph(
       locale,
       `${title} - ${locale === 'es' ? 'Spanish' : 'English'} Classes with Native Speaker`,
@@ -137,11 +140,17 @@ export async function generateMetadata({
   };
 }
 
+/**
+ * Generate static paths for all supported languages
+ */
 export async function generateStaticParams() {
-  // Return the supported locales for static generation
   return locales.map(lang => ({ lang }));
 }
 
+/**
+ * Layout for language-specific pages
+ * Wraps children in TranslationProvider to provide localized content
+ */
 export default async function LanguageLayout({
   children,
   params,
@@ -154,13 +163,8 @@ export default async function LanguageLayout({
 
   return (
     <TranslationProvider locale={locale}>
-      {/* Client component to set the HTML lang attribute */}
       <LangAttributeSetter lang={locale} />
-
-      {/* Children components */}
       {children}
-
-      {/* JSON-LD structured data script will be added during build */}
     </TranslationProvider>
   );
 }
