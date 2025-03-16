@@ -71,4 +71,4 @@ export const Korean: Story = {
   args: {
     translations: translations.ko,
   },
-}; 
+};

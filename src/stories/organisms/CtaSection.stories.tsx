@@ -17,9 +17,7 @@ const meta = {
     },
     backgrounds: {
       default: 'highlight',
-      values: [
-        { name: 'highlight', value: '#f0f9ff' },
-      ],
+      values: [{ name: 'highlight', value: '#f0f9ff' }],
     },
   },
   tags: ['autodocs'],
@@ -77,4 +75,4 @@ export const Korean: Story = {
   args: {
     translations: translations.ko,
   },
-}; 
+};

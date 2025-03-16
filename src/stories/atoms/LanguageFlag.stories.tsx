@@ -1,52 +1,74 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import LanguageFlag from '@/components/atoms/LanguageFlag';
 
-const meta: Meta<typeof LanguageFlag> = {
+/**
+ * Language flag component used to display language options in the hero section
+ */
+const meta = {
   title: 'Atoms/LanguageFlag',
   component: LanguageFlag,
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: 'Animated flag component that displays language options with hover effects.',
+      },
+    },
   },
   tags: ['autodocs'],
   argTypes: {
-    language: {
-      control: { type: 'select' },
-      options: ['spanish', 'uk'],
-    },
     position: {
-      control: { type: 'select' },
+      control: 'radio',
       options: ['top-left', 'bottom-right'],
+      description: 'Position of the flag component',
+    },
+    language: {
+      control: 'radio',
+      options: ['spanish', 'uk'],
+      description: 'Which language flag to display',
     },
   },
-};
+} satisfies Meta<typeof LanguageFlag>;
 
 export default meta;
-type Story = StoryObj<typeof LanguageFlag>;
+type Story = StoryObj<typeof meta>;
 
+/**
+ * Spanish flag in top-left position
+ */
 export const SpanishTopLeft: Story = {
   args: {
-    language: 'spanish',
     position: 'top-left',
-  },
-};
-
-export const SpanishBottomRight: Story = {
-  args: {
     language: 'spanish',
-    position: 'bottom-right',
   },
 };
 
+/**
+ * UK flag in top-left position
+ */
 export const UKTopLeft: Story = {
   args: {
-    language: 'uk',
     position: 'top-left',
+    language: 'uk',
   },
 };
 
+/**
+ * Spanish flag in bottom-right position
+ */
+export const SpanishBottomRight: Story = {
+  args: {
+    position: 'bottom-right',
+    language: 'spanish',
+  },
+};
+
+/**
+ * UK flag in bottom-right position
+ */
 export const UKBottomRight: Story = {
   args: {
-    language: 'uk',
     position: 'bottom-right',
+    language: 'uk',
   },
 };

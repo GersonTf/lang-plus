@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Logo from '@/components/atoms/Logo';
 
 /**
- * Logo component used for branding throughout the application
+ * The company logo used throughout the site
  */
 const meta = {
   title: 'Atoms/Logo',
@@ -11,15 +11,18 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Company logo that represents the A+ Languages brand.',
+        component: 'SVG logo component with the company branding.',
       },
+    },
+    backgrounds: {
+      default: 'white',
     },
   },
   tags: ['autodocs'],
   argTypes: {
     className: {
-      description: 'CSS classes to apply custom styling',
       control: 'text',
+      description: 'Additional CSS classes to apply to the logo component',
     },
   },
 } satisfies Meta<typeof Logo>;
@@ -28,35 +31,28 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * Default logo with no sizing
+ * Default sized logo
  */
 export const Default: Story = {
-  args: {},
+  args: {
+    className: 'w-24 h-24',
+  },
 };
 
 /**
- * Small size logo for compact spaces
+ * Small logo for mobile devices
  */
 export const Small: Story = {
   args: {
-    className: 'w-16 h-16',
+    className: 'w-12 h-12',
   },
 };
 
 /**
- * Medium size logo for standard usage
- */
-export const Medium: Story = {
-  args: {
-    className: 'w-32 h-32',
-  },
-};
-
-/**
- * Large size logo for high-impact areas
+ * Large logo for hero sections
  */
 export const Large: Story = {
   args: {
-    className: 'w-64 h-64',
+    className: 'w-40 h-40',
   },
 };
