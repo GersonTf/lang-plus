@@ -18,7 +18,7 @@ const TranslationContext = createContext(undefined);
 
 /**
  * Creates mock translations
- * @param {Locale} locale 
+ * @param {Locale} locale
  * @returns {Object} Mock translations
  */
 function createMockTranslations(locale = 'en') {
@@ -47,7 +47,8 @@ function createMockTranslations(locale = 'en') {
     },
     about: {
       title: 'About A+ Languages',
-      description: 'Professional language lessons with a focus on conversation and practical skills.',
+      description:
+        'Professional language lessons with a focus on conversation and practical skills.',
       benefits: [
         'Personalized curriculum',
         'Flexible scheduling',
@@ -111,16 +112,12 @@ function createMockTranslations(locale = 'en') {
 export function TranslationProvider({ children, locale = 'en' }) {
   const t = createMockTranslations(locale);
   const value = { t, locale };
-  
-  return (
-    <TranslationContext.Provider value={value}>
-      {children}
-    </TranslationContext.Provider>
-  );
+
+  return <TranslationContext.Provider value={value}>{children}</TranslationContext.Provider>;
 }
 
 /**
- * Hook to access translations in components 
+ * Hook to access translations in components
  * @returns {TranslationContextType}
  */
 export function useTranslation() {
@@ -129,4 +126,4 @@ export function useTranslation() {
     throw new Error('useTranslation must be used within a TranslationProvider');
   }
   return context;
-} 
+}

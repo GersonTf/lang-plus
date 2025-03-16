@@ -17,9 +17,9 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    className: { 
+    className: {
       description: 'CSS classes to apply custom styling',
-      control: 'text' 
+      control: 'text',
     },
   },
 } satisfies Meta<typeof Logo>;
@@ -59,4 +59,4 @@ export const Large: Story = {
   args: {
     className: 'w-64 h-64',
   },
-}; 
+};

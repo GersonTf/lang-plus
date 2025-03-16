@@ -3,7 +3,7 @@ import '../globals.css';
 import { Locale, locales } from '@/i18n';
 import { TranslationProvider } from '../contexts/TranslationContext';
 import { getBaseOpenGraph, getBaseTwitter, baseRobots } from '../shared-metadata';
-import LangAttributeSetter from '../components/LangAttributeSetter';
+import LangAttributeSetter from '@/components/utils/LangAttributeSetter';
 
 /**
  * Viewport configuration for responsive design
@@ -29,7 +29,6 @@ export async function generateMetadata({
   const translations = (await import(`@/i18n/locales/${locale}.json`)).default;
 
   const title = translations.header.title || 'A+ Languages';
-  const pageTitle = `${title} - ${translations.hero.title?.replace(/<highlight>|<\/highlight>/g, '') || 'Online Language Learning'}`;
   const description =
     translations.hero.description ||
     'Professional online English and Spanish language lessons with A+ Languages. Personalized classes for individuals and businesses with flexible scheduling and tailored curriculum for all levels.';

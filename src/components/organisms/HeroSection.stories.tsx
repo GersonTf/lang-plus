@@ -39,4 +39,4 @@ export const Spanish: Story = {
   parameters: {
     locale: 'es',
   },
-}; 
+};

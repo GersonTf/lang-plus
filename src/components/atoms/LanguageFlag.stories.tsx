@@ -49,4 +49,4 @@ export const UKBottomRight: Story = {
     language: 'uk',
     position: 'bottom-right',
   },
-}; 
+};

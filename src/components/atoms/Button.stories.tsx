@@ -13,7 +13,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Interactive button component with multiple variants and sizes for use throughout the application.',
+        component:
+          'Interactive button component with multiple variants and sizes for use throughout the application.',
       },
     },
   },
@@ -139,4 +140,4 @@ export const AsLink: Story = {
     size: 'md',
     href: '#',
   },
-}; 
+};

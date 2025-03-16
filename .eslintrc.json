@@ -5,9 +5,7 @@
     "prettier",
     "plugin:storybook/recommended"
   ],
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
     "@typescript-eslint/no-unused-expressions": [
@@ -30,10 +28,7 @@
     "no-console": [
       "warn",
       {
-        "allow": [
-          "warn",
-          "error"
-        ]
+        "allow": ["warn", "error"]
       }
     ],
     "react/no-unescaped-entities": "off",

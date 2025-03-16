@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { FaCheck } from 'react-icons/fa';
 import Button from '../atoms/Button';
 import { useTranslation } from '../../app/contexts/TranslationContext';
 

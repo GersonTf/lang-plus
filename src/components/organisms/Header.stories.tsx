@@ -14,7 +14,8 @@ const meta = {
     },
     docs: {
       description: {
-        component: 'Main navigation header that provides site-wide navigation and language selection.',
+        component:
+          'Main navigation header that provides site-wide navigation and language selection.',
       },
     },
   },
@@ -40,4 +41,4 @@ export const Spanish: Story = {
   parameters: {
     locale: 'es',
   },
-}; 
+};

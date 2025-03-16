@@ -18,6 +18,8 @@ type Story = StoryObj<typeof ScrollTopButton>;
 
 export const Default: Story = {
   args: {
-    onClick: () => console.log('Scroll to top clicked'),
+    onClick: () => {
+      /* Click handler would scroll to top */
+    },
   },
-}; 
+};
