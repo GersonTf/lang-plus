@@ -39,7 +39,7 @@ jobs:
 
       - name: Check formatting
         run: yarn format:check
-        
+
       - name: Run linting
         run: yarn lint
 
