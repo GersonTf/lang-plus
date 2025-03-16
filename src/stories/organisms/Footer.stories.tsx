@@ -1,74 +1,84 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import HeroSection from '@/components/organisms/HeroSection';
-import { translations } from '@/i18n';
+import Footer from '@/components/organisms/Footer';
+import { Locale, translations } from '@/i18n';
 
 /**
- * Hero section that appears on the homepage to capture user attention
+ * Footer section that appears at the bottom of every page
  */
 const meta = {
-  title: 'Organisms/HeroSection',
-  component: HeroSection,
+  title: 'Organisms/Footer',
+  component: Footer,
   parameters: {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Main hero section for the landing page with call-to-action buttons.',
+        component: 'Site-wide footer with copyright information and contact details.',
       },
     },
   },
   tags: ['autodocs'],
   argTypes: {
+    locale: {
+      control: 'radio',
+      options: ['en', 'es', 'zh', 'ja', 'ko'],
+      description: 'The current language locale',
+    },
     translations: {
       control: false,
       description: 'Translation object for the current locale (automatically provided)',
     },
   },
-} satisfies Meta<typeof HeroSection>;
+} satisfies Meta<typeof Footer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * HeroSection with English locale
+ * Footer with English locale
  */
 export const English: Story = {
   args: {
+    locale: 'en' as Locale,
     translations: translations.en,
   },
 };
 
 /**
- * HeroSection with Spanish locale
+ * Footer with Spanish locale
  */
 export const Spanish: Story = {
   args: {
+    locale: 'es' as Locale,
     translations: translations.es,
   },
 };
 
 /**
- * HeroSection with Chinese locale
+ * Footer with Chinese locale
  */
 export const Chinese: Story = {
   args: {
+    locale: 'zh' as Locale,
     translations: translations.zh,
   },
 };
 
 /**
- * HeroSection with Japanese locale
+ * Footer with Japanese locale
  */
 export const Japanese: Story = {
   args: {
+    locale: 'ja' as Locale,
     translations: translations.ja,
   },
 };
 
 /**
- * HeroSection with Korean locale
+ * Footer with Korean locale
  */
 export const Korean: Story = {
   args: {
+    locale: 'ko' as Locale,
     translations: translations.ko,
   },
-};
+}; 

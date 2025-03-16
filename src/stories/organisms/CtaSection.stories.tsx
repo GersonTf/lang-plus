@@ -1,19 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import HeroSection from '@/components/organisms/HeroSection';
+import CtaSection from '@/components/organisms/CtaSection';
 import { translations } from '@/i18n';
 
 /**
- * Hero section that appears on the homepage to capture user attention
+ * Call-to-action section that encourages users to contact
  */
 const meta = {
-  title: 'Organisms/HeroSection',
-  component: HeroSection,
+  title: 'Organisms/CtaSection',
+  component: CtaSection,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
     docs: {
       description: {
-        component: 'Main hero section for the landing page with call-to-action buttons.',
+        component: 'Call-to-action section with a prominent button to contact for classes.',
       },
+    },
+    backgrounds: {
+      default: 'highlight',
+      values: [
+        { name: 'highlight', value: '#f0f9ff' },
+      ],
     },
   },
   tags: ['autodocs'],
@@ -23,13 +29,13 @@ const meta = {
       description: 'Translation object for the current locale (automatically provided)',
     },
   },
-} satisfies Meta<typeof HeroSection>;
+} satisfies Meta<typeof CtaSection>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * HeroSection with English locale
+ * CtaSection with English locale
  */
 export const English: Story = {
   args: {
@@ -38,7 +44,7 @@ export const English: Story = {
 };
 
 /**
- * HeroSection with Spanish locale
+ * CtaSection with Spanish locale
  */
 export const Spanish: Story = {
   args: {
@@ -47,7 +53,7 @@ export const Spanish: Story = {
 };
 
 /**
- * HeroSection with Chinese locale
+ * CtaSection with Chinese locale
  */
 export const Chinese: Story = {
   args: {
@@ -56,7 +62,7 @@ export const Chinese: Story = {
 };
 
 /**
- * HeroSection with Japanese locale
+ * CtaSection with Japanese locale
  */
 export const Japanese: Story = {
   args: {
@@ -65,10 +71,10 @@ export const Japanese: Story = {
 };
 
 /**
- * HeroSection with Korean locale
+ * CtaSection with Korean locale
  */
 export const Korean: Story = {
   args: {
     translations: translations.ko,
   },
-};
+}; 

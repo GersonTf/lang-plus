@@ -1,18 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import HeroSection from '@/components/organisms/HeroSection';
+import AboutSection from '@/components/organisms/AboutSection';
 import { translations } from '@/i18n';
 
 /**
- * Hero section that appears on the homepage to capture user attention
+ * About section that explains the services offered
  */
 const meta = {
-  title: 'Organisms/HeroSection',
-  component: HeroSection,
+  title: 'Organisms/AboutSection',
+  component: AboutSection,
   parameters: {
-    layout: 'fullscreen',
+    layout: 'padded',
     docs: {
       description: {
-        component: 'Main hero section for the landing page with call-to-action buttons.',
+        component: 'Section that describes the company and services in detail.',
       },
     },
   },
@@ -23,13 +23,13 @@ const meta = {
       description: 'Translation object for the current locale (automatically provided)',
     },
   },
-} satisfies Meta<typeof HeroSection>;
+} satisfies Meta<typeof AboutSection>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * HeroSection with English locale
+ * AboutSection with English locale
  */
 export const English: Story = {
   args: {
@@ -38,7 +38,7 @@ export const English: Story = {
 };
 
 /**
- * HeroSection with Spanish locale
+ * AboutSection with Spanish locale
  */
 export const Spanish: Story = {
   args: {
@@ -47,7 +47,7 @@ export const Spanish: Story = {
 };
 
 /**
- * HeroSection with Chinese locale
+ * AboutSection with Chinese locale
  */
 export const Chinese: Story = {
   args: {
@@ -56,7 +56,7 @@ export const Chinese: Story = {
 };
 
 /**
- * HeroSection with Japanese locale
+ * AboutSection with Japanese locale
  */
 export const Japanese: Story = {
   args: {
@@ -65,10 +65,10 @@ export const Japanese: Story = {
 };
 
 /**
- * HeroSection with Korean locale
+ * AboutSection with Korean locale
  */
 export const Korean: Story = {
   args: {
     translations: translations.ko,
   },
-};
+}; 
