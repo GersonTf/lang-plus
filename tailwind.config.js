@@ -17,6 +17,8 @@ module.exports = {
         heading: 'var(--color-heading)',
         body: 'var(--color-text)',
         'body-light': 'var(--color-text-light)',
+        'accent-blue': 'var(--color-accent-blue)',
+        'accent-yellow': 'var(--color-accent-yellow)',
       },
       backgroundColor: {
         page: 'var(--color-background)',
@@ -42,13 +44,21 @@ module.exports = {
         'button-hover': 'var(--color-button-hover)',
         highlight: 'var(--color-highlight)',
         standard: 'var(--color-border-standard)',
+        accent: 'var(--color-border-accent)',
       },
       boxShadow: {
         standard: 'var(--shadow-standard)',
         medium: 'var(--shadow-medium)',
+        large: 'var(--shadow-large)',
+        hover: 'var(--shadow-hover)',
       },
       fontFamily: {
         sans: ['var(--font-roboto)', 'system-ui', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-secondary': 'var(--gradient-secondary)',
+        'gradient-highlight': 'var(--gradient-highlight)',
       },
     },
   },

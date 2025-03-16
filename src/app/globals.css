@@ -20,18 +20,31 @@
   --color-background: #ffffff; /* White background for page consistency */
   --color-card: #ffffff; /* White for cards/foreground elements */
 
-  /* Section background colors - more contrast for visual distinction */
+  /* Section background colors - updated for modern look */
   --color-section-primary: #ffffff; /* White sections */
-  --color-section-secondary: #e5eeff; /* Light blue for alternating sections */
-  --color-section-accent: #dbeafe; /* Blue-100 for special sections */
-  --color-section-highlight: #fef3c7; /* Amber-50 for call to action */
+  --color-section-secondary: #f8faff; /* Super light blue for alternating sections */
+  --color-section-accent: #f0f5ff; /* Slightly darker blue for accent sections */
+  --color-section-highlight: #fffaf0; /* Warm light background for CTA */
+
+  /* Decorative accents */
+  --color-accent-blue: #dbeafe; /* Blue-100 for decorative elements */
+  --color-accent-yellow: #fef3c7; /* Amber-50 for decorative elements */
+
+  /* Gradient backgrounds */
+  --gradient-primary: linear-gradient(135deg, #dbeafe 0%, #f8faff 100%);
+  --gradient-secondary: linear-gradient(135deg, #e5eeff 0%, #dbeafe 100%);
+  --gradient-highlight: linear-gradient(135deg, #fef3c7 0%, #fffaf0 100%);
 
   /* Border colors */
-  --color-border-standard: #e5e7eb; /* gray-200 for consistent borders */
+  --color-border-standard: #f1f5f9; /* slate-100 for subtle borders */
+  --color-border-accent: #e2e8f0; /* slate-200 for more visible borders */
 
-  /* Shadow styles */
-  --shadow-standard: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* Shadow styles - modernized */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-standard: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-large: 0 20px 25px -5px rgba(0, 0, 0, 0.03), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 20px 30px -10px rgba(0, 0, 0, 0.04), 0 10px 15px -5px rgba(0, 0, 0, 0.03);
 
   /* Interactive elements */
   --color-button: #2563eb; /* Darker blue for better contrast */
@@ -51,13 +64,81 @@
   background-color: #f4c635 !important;
 }
 
-/* Standard shadow class */
+/* Standard shadow classes - updated */
 .shadow-standard {
   box-shadow: var(--shadow-standard) !important;
 }
 
 .shadow-medium {
   box-shadow: var(--shadow-medium) !important;
+}
+
+.shadow-large {
+  box-shadow: var(--shadow-large) !important;
+}
+
+.shadow-hover {
+  box-shadow: var(--shadow-hover) !important;
+}
+
+/* Section dividers and styling */
+.section-divider {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='smallGrid' width='10' height='10' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 10 0 L 0 0 0 10' fill='none' stroke='%23F1F5F9' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23smallGrid)'/%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+/* Wave divider styles */
+.divider-wave {
+  position: relative;
+  height: 70px;
+  margin-top: -70px;
+}
+
+.divider-wave svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(1px);
+}
+
+.divider-wave-down {
+  transform: rotate(180deg);
+  margin-top: 0;
+  margin-bottom: -70px;
+}
+
+/* Section styling utilities */
+.section-inner {
+  position: relative;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.section-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-standard);
+  background-color: white;
+}
+
+/* Decorative dots pattern for section backgrounds */
+.bg-dots-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232563eb' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 @layer base {
@@ -187,4 +268,21 @@
   100% {
     transform: translateY(0px);
   }
+}
+
+/* Footer specific utilities */
+.footer-border-top {
+  border-top: 1px solid #e2e8f0;
+}
+
+.footer-shadow {
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.footer-text {
+  color: var(--color-text);
+}
+
+.footer-text-light {
+  color: var(--color-text-light);
 }
