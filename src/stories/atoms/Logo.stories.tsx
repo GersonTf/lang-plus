@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Logo from './Logo';
+import Logo from '@/components/atoms/Logo';
 
 /**
  * Logo component used for branding throughout the application

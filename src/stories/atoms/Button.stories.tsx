@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FaArrowRight } from 'react-icons/fa';
-import Button from './Button';
+import Button from '@/components/atoms/Button';
 
 /**
  * Button components are the primary interactive elements that allow users to trigger actions.

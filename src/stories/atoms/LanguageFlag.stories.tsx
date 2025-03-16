@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import LanguageFlag from './LanguageFlag';
+import LanguageFlag from '@/components/atoms/LanguageFlag';
 
 const meta: Meta<typeof LanguageFlag> = {
   title: 'Atoms/LanguageFlag',
