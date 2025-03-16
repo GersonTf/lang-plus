@@ -32,7 +32,8 @@ vi.mock('@/app/contexts/TranslationContext', () => {
       t: {
         hero: {
           title: 'Personalized <highlight>Online</highlight> Language Lessons',
-          description: 'Transform your language skills with one-on-one lessons from a native speaker.',
+          description:
+            'Transform your language skills with one-on-one lessons from a native speaker.',
           buttons: {
             consultation: 'Book Free Consultation',
             explore: 'Explore Classes',
@@ -49,6 +50,7 @@ vi.mock('@/app/contexts/TranslationContext', () => {
       },
       locale: 'en',
     }),
-    TranslationProvider: ({ children }: { children: React.ReactNode }) => React.createElement(React.Fragment, null, children),
+    TranslationProvider: ({ children }: { children: React.ReactNode }) =>
+      React.createElement(React.Fragment, null, children),
   };
-}); 
+});

@@ -25,20 +25,20 @@ vi.mock('@/app/contexts/TranslationContext', () => {
 describe('Header Component', () => {
   it('renders the site title', () => {
     render(<Header />);
-    
+
     const siteTitle = screen.getByText('A Plus Languages');
     expect(siteTitle).toBeInTheDocument();
   });
 
   it('renders navigation items', () => {
     render(<Header />);
-    
+
     const aboutLink = screen.getByText('About');
     const classesLink = screen.getByText('Classes');
     const contactLink = screen.getByText('Contact');
-    
+
     expect(aboutLink).toBeInTheDocument();
     expect(classesLink).toBeInTheDocument();
     expect(contactLink).toBeInTheDocument();
   });
-}); 
+});
