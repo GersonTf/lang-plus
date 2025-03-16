@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.apluslanguages.eu'),
   title: {
     template: '%s | A+ Languages',
-    default: 'A+ Languages - Personalized English and Spanish Classes with Native Speaker',
+    default: 'A+ Languages - Professional English and Spanish Classes with Native Speaker',
   },
   description:
     'Professional online English and Spanish language lessons with A+ Languages. Personalized classes for individuals and businesses with a native speaker teacher. Online lessons using modern tools.',
@@ -103,29 +103,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_GB',
     url: 'https://www.apluslanguages.eu',
-    title: 'A+ Languages - English and Spanish Classes with Native Speaker',
+    title: 'A+ Languages - Professional English and Spanish Classes with Native Speaker',
     description:
       'Professional personalized English and Spanish classes with a native speaker teacher. Online lessons for companies and individuals.',
-    siteName: 'A+ Languages | A Plus Languages | Personalized Language Learning',
+    siteName: 'A+ Languages | English and Spanish Classes | Personalized Language Learning',
     images: [
       {
         url: '/images/aplus-logo.svg',
         width: 512,
         height: 512,
         alt: 'A Plus Languages Logo',
-      },
-      {
-        url: '/og-image.jpg', // Fallback for platforms that don't support SVG
-        width: 1200,
-        height: 630,
-        alt: 'A Plus Languages',
-      },
+      }
     ],
     alternateLocale: ['en_GB', 'es_ES', 'zh_CN', 'ja_JP', 'ko_KR'],
   },
   twitter: {
     card: 'summary',
-    title: 'A+ Languages - Personalized English and Spanish Classes for Companies',
+    title: 'A+ Languages - Professional English and Spanish Classes',
     description:
       'A+ Languages: English and Spanish classes for companies with certified native teacher. Personalized online curriculum.',
     images: ['/images/aplus-logo.svg'],
@@ -159,16 +153,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: 'A Plus Languages',
     alternateName: ['A+ Languages', 'Aplus Languages', 'A + Languages', 'APlusLanguages'],
     description:
-      'Professional online English and Spanish language lessons with a native speaker teacher of both languages. Personalized classes for individuals and businesses.',
+      'Professional online English and Spanish language lessons with a native speaker teacher. Personalized classes for individuals and businesses.',
     url: 'https://www.apluslanguages.eu',
     logo: '/images/aplus-logo.svg',
     keywords:
-      'English classes, Spanish classes, personalized language learning, native speaker teacher, online classes, classes for companies, business English, business Spanish',
+      'English classes, Spanish classes, professional language learning, native speaker teacher, online classes, classes for companies, business English, business Spanish',
     sameAs: ['https://www.apluslanguages.eu'],
     '@graph': [
       {
         '@type': 'Service',
-        name: 'Online Language Classes',
+        name: 'Professional Online Language Classes',
         description:
           'Professional online English and Spanish classes with a native speaker teacher. Fully online with modern tools like Google Meet and Miro boards. Personalized curriculum for individuals and companies.',
         provider: {
@@ -218,7 +212,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           'query-input': 'required name=search_term_string',
         },
         description:
-          'Professional online English and Spanish language lessons with a native speaker teacher of both languages. Classes for companies and individuals.',
+          'Professional online English and Spanish language lessons with a native speaker teacher. Classes for companies and individuals.',
       },
     ],
   };

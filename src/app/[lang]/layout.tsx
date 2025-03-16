@@ -127,11 +127,11 @@ export async function generateMetadata({
     },
     openGraph: getBaseOpenGraph(
       locale,
-      `${title} - ${locale === 'es' ? 'Spanish' : 'English'} Classes with Native Speaker`,
+      `${title} - Professional ${locale === 'es' ? 'Spanish' : 'English'} Classes with Native Speaker`,
       enhancedDescriptions[1]
     ),
     twitter: getBaseTwitter(
-      `${title} - Personalized ${locale === 'es' ? 'Spanish' : 'English'} Classes for Companies and Individuals`,
+      `${title} - Professional ${locale === 'es' ? 'Spanish' : 'English'} Classes for Companies and Individuals`,
       enhancedDescriptions[2]
     ),
     robots: baseRobots,
