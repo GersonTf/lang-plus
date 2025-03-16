@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.apluslanguages.eu'),
   title: {
     template: '%s | A+ Languages',
-    default: 'A+ Languages - Personalized English and Spanish Classes with Native Speaker',
+    default: 'A+ Languages - Professional Language Learning',
   },
   description:
     'Professional online English and Spanish language lessons with A+ Languages. Personalized classes for individuals and businesses with a native speaker teacher. Online lessons using modern tools.',

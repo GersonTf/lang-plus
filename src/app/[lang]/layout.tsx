@@ -46,7 +46,7 @@ export async function generateMetadata({
     metadataBase: new URL('https://www.apluslanguages.eu'),
     title: {
       template: `%s | ${title}`,
-      default: pageTitle,
+      default: `${locale === 'es' ? 'Spanish' : 'English'} Classes with Native Speaker | ${title}`,
       absolute: `${locale === 'es' ? 'Spanish' : 'English'} Classes with Native Speaker | ${title}`,
     },
     description: enhancedDescriptions[0],
