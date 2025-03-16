@@ -99,28 +99,6 @@
   opacity: 0.3;
 }
 
-/* Wave divider styles */
-.divider-wave {
-  position: relative;
-  height: 70px;
-  margin-top: -70px;
-}
-
-.divider-wave svg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: translateY(1px);
-}
-
-.divider-wave-down {
-  transform: rotate(180deg);
-  margin-top: 0;
-  margin-bottom: -70px;
-}
-
 /* Section styling utilities */
 .section-inner {
   position: relative;

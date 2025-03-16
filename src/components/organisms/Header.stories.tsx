@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Header from './Header';
-import en from '@/i18n/locales/en.json';
-import es from '@/i18n/locales/es.json';
-import { Locale } from '@/i18n';
+import { Locale, translations } from '@/i18n';
 
 /**
  * Main navigation header that appears at the top of every page
@@ -23,6 +21,17 @@ const meta = {
     },
   },
   tags: ['autodocs'],
+  argTypes: {
+    locale: {
+      control: 'radio',
+      options: ['en', 'es', 'zh', 'ja', 'ko'],
+      description: 'The current language locale',
+    },
+    translations: {
+      control: false,
+      description: 'Translation object for the current locale (automatically provided)',
+    },
+  },
 } satisfies Meta<typeof Header>;
 
 export default meta;
@@ -31,10 +40,10 @@ type Story = StoryObj<typeof meta>;
 /**
  * Default header with English locale
  */
-export const Default: Story = {
+export const English: Story = {
   args: {
-    translations: en,
     locale: 'en' as Locale,
+    translations: translations.en,
   },
 };
 
@@ -43,7 +52,37 @@ export const Default: Story = {
  */
 export const Spanish: Story = {
   args: {
-    translations: es,
     locale: 'es' as Locale,
+    translations: translations.es,
+  },
+};
+
+/**
+ * Header with Chinese locale
+ */
+export const Chinese: Story = {
+  args: {
+    locale: 'zh' as Locale,
+    translations: translations.zh,
+  },
+};
+
+/**
+ * Header with Japanese locale
+ */
+export const Japanese: Story = {
+  args: {
+    locale: 'ja' as Locale,
+    translations: translations.ja,
+  },
+};
+
+/**
+ * Header with Korean locale
+ */
+export const Korean: Story = {
+  args: {
+    locale: 'ko' as Locale,
+    translations: translations.ko,
   },
 };
