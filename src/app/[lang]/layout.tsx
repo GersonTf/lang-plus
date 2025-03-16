@@ -163,8 +163,8 @@ export default async function LanguageLayout({
   const _dictionary = await getDictionary(locale);
 
   return (
-    <div lang={locale} className="min-h-screen flex flex-col">
+    <main lang={locale} className="min-h-screen flex flex-col">
       {children}
-    </div>
+    </main>
   );
 }

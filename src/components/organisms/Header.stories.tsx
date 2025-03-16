@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Header from './Header';
+import en from '@/i18n/locales/en.json';
+import es from '@/i18n/locales/es.json';
+import { Locale } from '@/i18n';
 
 /**
  * Main navigation header that appears at the top of every page
@@ -29,8 +32,9 @@ type Story = StoryObj<typeof meta>;
  * Default header with English locale
  */
 export const Default: Story = {
-  parameters: {
-    locale: 'en',
+  args: {
+    translations: en,
+    locale: 'en' as Locale,
   },
 };
 
@@ -38,7 +42,8 @@ export const Default: Story = {
  * Header with Spanish locale
  */
 export const Spanish: Story = {
-  parameters: {
-    locale: 'es',
+  args: {
+    translations: es,
+    locale: 'es' as Locale,
   },
 };

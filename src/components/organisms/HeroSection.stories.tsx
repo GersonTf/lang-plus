@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import HeroSection from './HeroSection';
+import en from '@/i18n/locales/en.json';
+import es from '@/i18n/locales/es.json';
 
 /**
  * Hero section that appears on the homepage to capture user attention
@@ -9,8 +11,6 @@ const meta = {
   component: HeroSection,
   parameters: {
     layout: 'fullscreen',
-    // Specify we need translation context (our global decorator will provide it)
-    locale: 'en',
     docs: {
       description: {
         component: 'Main hero section for the landing page with call-to-action buttons.',
@@ -27,8 +27,8 @@ type Story = StoryObj<typeof meta>;
  * Default hero section with English locale
  */
 export const Default: Story = {
-  parameters: {
-    locale: 'en',
+  args: {
+    translations: en,
   },
 };
 
@@ -36,7 +36,7 @@ export const Default: Story = {
  * Hero section in Spanish locale
  */
 export const Spanish: Story = {
-  parameters: {
-    locale: 'es',
+  args: {
+    translations: es,
   },
 };
