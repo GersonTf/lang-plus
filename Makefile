@@ -1,7 +1,7 @@
 # A+ Languages Project Makefile
 # Make commands for common development tasks
 
-.PHONY: dev build start lint lint-fix format format-check check fix storybook build-storybook clean help
+.PHONY: dev build start lint lint-fix format format-check check fix storybook build-storybook test test-watch test-coverage clean help
 
 # Default target
 .DEFAULT_GOAL := help
@@ -58,6 +58,19 @@ check: ## Run all checks (lint + format check)
 fix: ## Fix all issues (lint --fix + format)
 	@echo "$(COLOR_MAGENTA)Fixing all issues...$(COLOR_RESET)"
 	yarn fix
+
+# Testing
+test: ## Run tests
+	@echo "$(COLOR_MAGENTA)Running tests...$(COLOR_RESET)"
+	yarn test
+
+test-watch: ## Run tests in watch mode
+	@echo "$(COLOR_MAGENTA)Running tests in watch mode...$(COLOR_RESET)"
+	yarn test:watch
+
+test-coverage: ## Run tests with coverage
+	@echo "$(COLOR_MAGENTA)Running tests with coverage...$(COLOR_RESET)"
+	yarn test:coverage
 
 # Storybook
 storybook: ## Start Storybook development server
