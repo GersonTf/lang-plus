@@ -52,11 +52,11 @@ export const metadata: Metadata = {
     'tailored language courses',
   ],
   alternates: {
-    canonical: '/',
+    canonical: '/en',
   },
-  authors: [{ name: 'A+ Languages - Native Speaker Teacher' }],
-  creator: 'A+ Languages',
-  publisher: 'A+ Languages',
+  authors: [{ name: 'A Plus Languages - Native Speaker Teacher' }],
+  creator: 'A Plus Languages',
+  publisher: 'A Plus Languages',
   formatDetection: {
     email: false,
     address: false,
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   // - apple-icon.png (Apple touch icon)
   other: {
     preconnect: ['https://fonts.googleapis.com'],
-    manifest: '/manifest.json',
+    manifest: 'https://www.apluslanguages.eu/manifest.json',
     // Additional descriptions for better SEO
     description1:
       'Professional personalized English and Spanish classes with a native speaker teacher. Online lessons for companies and individuals.',
@@ -78,24 +78,24 @@ export const metadata: Metadata = {
       'Aplus Languages offers professional language classes for companies. Online lessons with native speaker teacher.',
   },
   icons: {
-    icon: '/icon-192.png',
-    shortcut: '/icon-192.png',
-    apple: '/icon-192.png',
+    icon: 'https://www.apluslanguages.eu/icon-192.png',
+    shortcut: 'https://www.apluslanguages.eu/icon-192.png',
+    apple: 'https://www.apluslanguages.eu/icon-192.png',
     other: [
       {
         rel: 'apple-touch-icon-precomposed',
-        url: '/icon-192.png',
+        url: 'https://www.apluslanguages.eu/icon-192.png',
       },
       {
         rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
+        url: 'https://www.apluslanguages.eu/safari-pinned-tab.svg',
         color: '#3b82f6',
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '512x512',
-        url: '/icon-512.png',
+        url: 'https://www.apluslanguages.eu/icon-512.png',
       },
     ],
   },
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     siteName: 'A+ Languages | English and Spanish Classes | Personalized Language Learning',
     images: [
       {
-        url: '/images/aplus-logo.svg',
+        url: 'https://www.apluslanguages.eu/images/aplus-logo.svg',
         width: 512,
         height: 512,
         alt: 'A Plus Languages Logo',
@@ -122,9 +122,7 @@ export const metadata: Metadata = {
     title: 'A+ Languages - Professional English and Spanish Classes',
     description:
       'A+ Languages: English and Spanish classes for companies with certified native teacher. Personalized online curriculum.',
-    images: ['/images/aplus-logo.svg'],
-    site: '@AplusLanguages',
-    creator: '@AplusLanguages',
+    images: ['https://www.apluslanguages.eu/images/aplus-logo.svg']
   },
   robots: {
     index: true,
@@ -155,7 +153,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     description:
       'Professional online English and Spanish language lessons with a native speaker teacher. Personalized classes for individuals and businesses.',
     url: 'https://www.apluslanguages.eu',
-    logo: '/images/aplus-logo.svg',
+    logo: 'https://www.apluslanguages.eu/images/aplus-logo.svg',
     keywords:
       'English classes, Spanish classes, professional language learning, native speaker teacher, online classes, classes for companies, business English, business Spanish',
     sameAs: ['https://www.apluslanguages.eu'],
@@ -203,14 +201,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         '@type': 'WebSite',
         name: 'A Plus Languages',
         url: 'https://www.apluslanguages.eu',
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: {
-            '@type': 'EntryPoint',
-            urlTemplate: 'https://www.apluslanguages.eu/search?q={search_term_string}',
-          },
-          'query-input': 'required name=search_term_string',
-        },
         description:
           'Professional online English and Spanish language lessons with a native speaker teacher. Classes for companies and individuals.',
       },
@@ -221,11 +211,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={roboto.variable}>
       <head>
         {/* Primary Meta Tags */}
-        <link rel="canonical" href="https://www.apluslanguages.eu/" />
+        <link rel="canonical" href="https://www.apluslanguages.eu/en" />
         <meta name="theme-color" content="#3b82f6" />
 
         {/* Web App Manifest */}
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="https://www.apluslanguages.eu/manifest.json" />
       </head>
       <body
         style={{
