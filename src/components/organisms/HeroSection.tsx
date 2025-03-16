@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import LanguageFlag from './LanguageFlag';
-import Button from './Button';
-import { useTranslation } from '../contexts/TranslationContext';
+import LanguageFlag from '../atoms/LanguageFlag';
+import Button from '../atoms/Button';
+import { useTranslation } from '../../app/contexts/TranslationContext';
 
 const HeroSection = () => {
   const { t } = useTranslation();

@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Header from '../components/Header';
-import HeroSection from '../components/HeroSection';
-import AboutSection from '../components/AboutSection';
-import ClassesSection from '../components/ClassesSection';
-import StatsSection from '../components/StatsSection';
-import CtaSection from '../components/CtaSection';
-import ScrollTopButton from '../components/ScrollTopButton';
+import Header from '../../components/organisms/Header';
+import HeroSection from '../../components/organisms/HeroSection';
+import AboutSection from '../../components/organisms/AboutSection';
+import ClassesSection from '../../components/organisms/ClassesSection';
+import StatsSection from '../../components/organisms/StatsSection';
+import CtaSection from '../../components/organisms/CtaSection';
+import ScrollTopButton from '../../components/atoms/ScrollTopButton';
 
 /**
  * Localized homepage component that displays content in the current language

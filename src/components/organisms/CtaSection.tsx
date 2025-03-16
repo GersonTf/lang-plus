@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import Button from './Button';
-import { useTranslation } from '../contexts/TranslationContext';
+import { FaArrowRight } from 'react-icons/fa';
+import Button from '../atoms/Button';
+import { useTranslation } from '../../app/contexts/TranslationContext';
 
 const CtaSection = () => {
   const [_isEmailHovered, _setIsEmailHovered] = useState(false);

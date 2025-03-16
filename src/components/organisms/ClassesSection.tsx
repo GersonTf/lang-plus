@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import Button from './Button';
-import { useTranslation } from '../contexts/TranslationContext';
+import { FaCheck } from 'react-icons/fa';
+import Button from '../atoms/Button';
+import { useTranslation } from '../../app/contexts/TranslationContext';
 
 // Define interface for class type
 interface ClassType {

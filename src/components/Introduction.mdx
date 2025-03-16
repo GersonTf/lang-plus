@@ -1,0 +1,61 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction/Component Organization" />
+
+# A+ Languages Component Library
+
+This component library follows the **Atomic Design** methodology to organize UI components into clear, reusable groups.
+
+## Atomic Design Structure
+
+Our components are organized into the following categories:
+
+### Atoms
+
+The basic building blocks of our application:
+- Button
+- Logo
+- LanguageFlag
+- ScrollTopButton
+
+Atoms are the smallest functional UI components that can't be broken down further without losing their meaning.
+
+### Molecules
+
+Combinations of atoms that work together as a unit:
+- LanguageSelector
+
+Molecules are relatively simple groups of UI elements functioning together as a unit.
+
+### Organisms
+
+Complex UI sections composed of atoms, molecules, and other organisms:
+- Header
+- AboutSection
+- ClassesSection
+- CtaSection
+- HeroSection
+- StatsSection
+
+Organisms are relatively complex UI components that form distinct sections of the interface.
+
+### Templates
+
+Page-level objects that place components into a layout:
+- (To be implemented as needed)
+
+### Utilities
+
+Components that provide functionality rather than UI:
+- LangAttributeSetter
+
+## Usage Guidelines
+
+When creating new components:
+
+1. **Determine the type** - Consider where your component fits in the atomic design hierarchy
+2. **Follow naming conventions** - Use PascalCase for component names
+3. **Create stories** - Document all possible states and variants
+4. **Include documentation** - Add JSDoc comments and meaningful descriptions
+
+For more detailed information about each component, explore the documentation in each section. 

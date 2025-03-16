@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Button from './Button';
-import Logo from './Logo';
-import LanguageSelector from './LanguageSelector';
-import { useTranslation } from '../contexts/TranslationContext';
+import Button from '../atoms/Button';
+import Logo from '../atoms/Logo';
+import LanguageSelector from '../molecules/LanguageSelector';
+import { useTranslation } from '../../app/contexts/TranslationContext';
 
 const Header = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);

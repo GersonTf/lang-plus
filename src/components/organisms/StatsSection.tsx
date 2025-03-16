@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslation } from '../contexts/TranslationContext';
+import { useTranslation } from '../../app/contexts/TranslationContext';
 
 const StatsSection = () => {
   const { t } = useTranslation();
