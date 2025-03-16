@@ -15,7 +15,7 @@ interface HeaderProps {
 const Header = ({ translations, locale }: HeaderProps) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   const t = translations;
 
   const navItems = [

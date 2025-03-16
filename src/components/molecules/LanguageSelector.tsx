@@ -18,7 +18,7 @@ const LanguageSelector = ({ locale, currentLocale }: LanguageSelectorProps) => {
   // Renamed to indicate it's unused
   const _router = useRouter();
   const pathname = usePathname();
-  
+
   // Use currentLocale if provided (for backward compatibility), otherwise use locale
   const activeLocale = currentLocale || locale;
 

@@ -20,6 +20,6 @@ export default function ScrollButtonWrapper() {
   };
 
   if (!showScrollTop) return null;
-  
+
   return <ScrollTopButton onClick={scrollToTop} />;
-} 
+}
