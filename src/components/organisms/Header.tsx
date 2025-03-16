@@ -5,12 +5,18 @@ import Link from 'next/link';
 import Button from '../atoms/Button';
 import Logo from '../atoms/Logo';
 import LanguageSelector from '../molecules/LanguageSelector';
-import { useTranslation } from '../../app/contexts/TranslationContext';
+import { Locale, TranslationObject } from '@/i18n';
 
-const Header = () => {
+interface HeaderProps {
+  translations: TranslationObject;
+  locale: Locale;
+}
+
+const Header = ({ translations, locale }: HeaderProps) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { t, locale } = useTranslation();
+  
+  const t = translations;
 
   const navItems = [
     { name: t.navigation.about, href: '#about' },
@@ -30,7 +36,7 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <div className="flex items-center sm:hidden">
-            <LanguageSelector currentLocale={locale} />
+            <LanguageSelector locale={locale} />
             <Button
               variant="text"
               size="xs"
@@ -87,7 +93,7 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <LanguageSelector currentLocale={locale} />
+            <LanguageSelector locale={locale} />
           </nav>
         </div>
 

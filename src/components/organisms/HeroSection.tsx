@@ -3,10 +3,14 @@
 import Image from 'next/image';
 import LanguageFlag from '../atoms/LanguageFlag';
 import Button from '../atoms/Button';
-import { useTranslation } from '../../app/contexts/TranslationContext';
+import { TranslationObject } from '@/i18n';
 
-const HeroSection = () => {
-  const { t } = useTranslation();
+interface HeroSectionProps {
+  translations: TranslationObject;
+}
+
+const HeroSection = ({ translations }: HeroSectionProps) => {
+  const t = translations;
 
   // Helper function to handle HTML in translations
   const renderHTML = (html: string) => {

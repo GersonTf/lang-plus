@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Button from '../atoms/Button';
-import { useTranslation } from '../../app/contexts/TranslationContext';
 import SectionHeader from '../molecules/SectionHeader';
+import { TranslationObject } from '@/i18n';
 
 // Define interface for class type
 interface ClassType {
@@ -16,9 +16,13 @@ interface HoveredClassCards {
   [key: number]: boolean;
 }
 
-const ClassesSection = () => {
+interface ClassesSectionProps {
+  translations: TranslationObject;
+}
+
+const ClassesSection = ({ translations }: ClassesSectionProps) => {
   const [hoveredClassCards, setHoveredClassCards] = useState<HoveredClassCards>({});
-  const { t } = useTranslation();
+  const t = translations;
 
   const setClassCardHovered = (index: number, hovered: boolean) => {
     setHoveredClassCards(prev => ({ ...prev, [index]: hovered }));

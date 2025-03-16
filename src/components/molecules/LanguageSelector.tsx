@@ -8,15 +8,19 @@ import { locales, localeNames, Locale, getPathWithoutLocale } from '@/i18n';
 import { localeFlags as _localeFlags, getLocaleFromPath as _getLocaleFromPath } from '@/i18n';
 
 interface LanguageSelectorProps {
-  currentLocale: Locale;
+  locale: Locale;
+  currentLocale?: Locale; // Keep for backward compatibility
 }
 
-const LanguageSelector = ({ currentLocale }: LanguageSelectorProps) => {
+const LanguageSelector = ({ locale, currentLocale }: LanguageSelectorProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   // Renamed to indicate it's unused
   const _router = useRouter();
   const pathname = usePathname();
+  
+  // Use currentLocale if provided (for backward compatibility), otherwise use locale
+  const activeLocale = currentLocale || locale;
 
   // Handle click outside to close dropdown
   useEffect(() => {
@@ -58,7 +62,7 @@ const LanguageSelector = ({ currentLocale }: LanguageSelectorProps) => {
             d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <span className="font-medium">{currentLocale.toUpperCase()}</span>
+        <span className="font-medium">{activeLocale.toUpperCase()}</span>
         <svg
           className="h-3 w-3 transition-transform duration-200"
           fill="none"
@@ -74,20 +78,20 @@ const LanguageSelector = ({ currentLocale }: LanguageSelectorProps) => {
       {isOpen && (
         <div className="absolute right-0 mt-1 w-36 bg-white rounded-md shadow-lg ring-1 ring-black/5 z-50 overflow-hidden border border-gray-100 backdrop-blur-sm">
           <ul className="py-0.5" role="menu" aria-orientation="vertical">
-            {locales.map(locale => (
-              <li key={locale} className="relative">
+            {locales.map(localeItem => (
+              <li key={localeItem} className="relative">
                 <Link
-                  href={`/${locale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`}
+                  href={`/${localeItem}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`}
                   className={`flex items-center w-full px-3 py-1.5 text-xs ${
-                    locale === currentLocale
+                    localeItem === activeLocale
                       ? 'bg-blue-50 text-blue-900 font-medium border-l-2 border-l-blue-900 pl-2.5'
                       : 'text-gray-700 hover:bg-blue-50 hover:text-blue-800 hover:border-l-2 hover:border-l-blue-900 hover:pl-2.5'
                   } transition-all duration-100`}
                   onClick={() => setIsOpen(false)}
                   role="menuitem"
                 >
-                  <span>{localeNames[locale]}</span>
-                  {locale === currentLocale && (
+                  <span>{localeNames[localeItem]}</span>
+                  {localeItem === activeLocale && (
                     <span className="absolute right-2 text-blue-900">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

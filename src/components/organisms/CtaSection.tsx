@@ -1,11 +1,15 @@
 'use client';
 
 import Button from '../atoms/Button';
-import { useTranslation } from '../../app/contexts/TranslationContext';
 import SectionHeader from '../molecules/SectionHeader';
+import { TranslationObject } from '@/i18n';
 
-const CtaSection = () => {
-  const { t } = useTranslation();
+interface CtaSectionProps {
+  translations: TranslationObject;
+}
+
+const CtaSection = ({ translations }: CtaSectionProps) => {
+  const t = translations;
 
   return (
     <div className="relative">

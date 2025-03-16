@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import '../globals.css';
 import { Locale, locales } from '@/i18n';
-import { TranslationProvider } from '../contexts/TranslationContext';
 import { getBaseOpenGraph, getBaseTwitter, baseRobots } from '../shared-metadata';
-import LangAttributeSetter from '@/components/utils/LangAttributeSetter';
+import { getDictionary } from './dictionaries';
 
 /**
  * Viewport configuration for responsive design
@@ -22,15 +21,16 @@ export async function generateMetadata({
 }: {
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
+  // Properly await the params
   const { lang } = await params;
-  const locale = lang as Locale;
+  const locale = (lang as Locale) || 'en';
 
-  // Import the translations for the current locale
-  const translations = (await import(`@/i18n/locales/${locale}.json`)).default;
+  // Get the dictionary for the current locale
+  const dictionary = await getDictionary(locale);
 
-  const title = translations.header.title || 'A+ Languages';
+  const title = dictionary.header.title || 'A+ Languages';
   const description =
-    translations.hero.description ||
+    dictionary.hero.description ||
     'Professional online English and Spanish language lessons with A+ Languages. Personalized classes for individuals and businesses with flexible scheduling and tailored curriculum for all levels.';
 
   // Multiple descriptions for better SEO and keyword targeting
@@ -148,7 +148,7 @@ export async function generateStaticParams() {
 
 /**
  * Layout for language-specific pages
- * Wraps children in TranslationProvider to provide localized content
+ * Provides the layout structure with proper language attribute and dictionary
  */
 export default async function LanguageLayout({
   children,
@@ -157,13 +157,14 @@ export default async function LanguageLayout({
   children: React.ReactNode;
   params: Promise<{ lang: string }>;
 }) {
+  // Properly await the params
   const { lang } = await params;
-  const locale = lang as Locale;
-
+  const locale = (lang as Locale) || 'en';
+  const _dictionary = await getDictionary(locale);
+  
   return (
-    <TranslationProvider locale={locale}>
-      <LangAttributeSetter lang={locale} />
+    <div lang={locale} className="min-h-screen flex flex-col">
       {children}
-    </TranslationProvider>
+    </div>
   );
 }

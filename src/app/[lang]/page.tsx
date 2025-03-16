@@ -1,15 +1,13 @@
-'use client';
-
-import { useState, useEffect } from 'react';
-import Header from '../../components/organisms/Header';
-import HeroSection from '../../components/organisms/HeroSection';
-import AboutSection from '../../components/organisms/AboutSection';
-import ClassesSection from '../../components/organisms/ClassesSection';
-import StatsSection from '../../components/organisms/StatsSection';
-import CtaSection from '../../components/organisms/CtaSection';
-import Footer from '../../components/organisms/Footer';
-import ScrollTopButton from '../../components/atoms/ScrollTopButton';
-import SectionWrapper from '../../components/molecules/SectionWrapper';
+import { Locale } from '@/i18n';
+import { getDictionary } from './dictionaries';
+import Header from '@/components/organisms/Header';
+import HeroSection from '@/components/organisms/HeroSection';
+import AboutSection from '@/components/organisms/AboutSection';
+import ClassesSection from '@/components/organisms/ClassesSection';
+import StatsSection from '@/components/organisms/StatsSection';
+import CtaSection from '@/components/organisms/CtaSection';
+import Footer from '@/components/organisms/Footer';
+import ScrollButtonWrapper from '@/components/client/ScrollButtonWrapper';
 
 // Wave divider SVG components - reduced height
 const WaveDivider = ({ color = 'fill-section-secondary', className = '' }) => (
@@ -26,45 +24,27 @@ const WaveDivider = ({ color = 'fill-section-secondary', className = '' }) => (
 
 /**
  * Localized homepage component that displays content in the current language
- * Renders the main sections of the site and handles scroll-to-top functionality
  */
-export default function LocalizedHomePage() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
+  // Properly await the params
+  const { lang } = await params;
+  const locale = (lang as Locale) || 'en';
+  const dictionary = await getDictionary(locale);
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Header */}
-      <Header />
+      <Header translations={dictionary} locale={locale} />
 
       {/* Hero Section */}
-      <HeroSection />
+      <HeroSection translations={dictionary} />
 
       {/* Main Content */}
       <main className="flex-grow w-full">
         {/* About Section - Light background */}
         <div className="bg-section-primary py-10 sm:py-14 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionWrapper
-              id="about"
-              hasDots={true}
-              hasGlow={true}
-              className="py-6 sm:py-8 md:py-10"
-            >
-              <AboutSection />
-            </SectionWrapper>
+            <AboutSection translations={dictionary} />
           </div>
         </div>
 
@@ -74,14 +54,7 @@ export default function LocalizedHomePage() {
         {/* Classes Section - Accent background */}
         <div className="bg-section-secondary py-10 sm:py-14 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionWrapper
-              id="classes"
-              colorVariant="secondary"
-              hasGlow={true}
-              className="py-6 sm:py-8 md:py-10"
-            >
-              <ClassesSection />
-            </SectionWrapper>
+            <ClassesSection translations={dictionary} />
           </div>
         </div>
 
@@ -91,14 +64,7 @@ export default function LocalizedHomePage() {
         {/* Stats Section - Light background */}
         <div className="bg-section-primary py-10 sm:py-14 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionWrapper
-              id="stats"
-              colorVariant="primary"
-              hasDots={true}
-              className="py-6 sm:py-8 md:py-10"
-            >
-              <StatsSection />
-            </SectionWrapper>
+            <StatsSection translations={dictionary} />
           </div>
         </div>
 
@@ -108,23 +74,16 @@ export default function LocalizedHomePage() {
         {/* CTA Section - Highlight background */}
         <div className="bg-section-highlight py-10 sm:py-14 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <SectionWrapper
-              id="contact"
-              colorVariant="highlight"
-              hasGlow={true}
-              className="py-6 sm:py-8 md:py-10"
-            >
-              <CtaSection />
-            </SectionWrapper>
+            <CtaSection translations={dictionary} />
           </div>
         </div>
       </main>
 
       {/* Footer - separate from sections */}
-      <Footer />
+      <Footer translations={dictionary} locale={locale} />
 
-      {/* Scroll to Top Button */}
-      {showScrollTop && <ScrollTopButton onClick={scrollToTop} />}
+      {/* Scroll to Top Button - Client Component */}
+      <ScrollButtonWrapper />
     </div>
   );
 }

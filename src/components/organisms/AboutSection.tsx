@@ -1,10 +1,14 @@
 'use client';
 
-import { useTranslation } from '../../app/contexts/TranslationContext';
 import SectionHeader from '../molecules/SectionHeader';
+import { TranslationObject } from '@/i18n';
 
-const AboutSection = () => {
-  const { t } = useTranslation();
+interface AboutSectionProps {
+  translations: TranslationObject;
+}
+
+const AboutSection = ({ translations }: AboutSectionProps) => {
+  const t = translations;
 
   return (
     <div className="relative">
