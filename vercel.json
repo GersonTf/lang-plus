@@ -1,13 +1,14 @@
 {
   "redirects": [
-    {
-      "source": "https://apluslanguages.eu/:path*",
-      "destination": "https://www.apluslanguages.eu/:path*",
-      "permanent": true
-    },
-    {
-      "source": "http://apluslanguages.eu/:path*",
-      "destination": "https://www.apluslanguages.eu/:path*",
+    { 
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "apluslanguages.eu"
+        }
+      ],
+      "destination": "https://www.apluslanguages.eu/$1",
       "permanent": true
     }
   ]

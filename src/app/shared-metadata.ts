@@ -13,7 +13,13 @@ export const getOpenGraphImages = (locale: Locale, title: string) => [
     width: 512,
     height: 512,
     alt: `${title || 'A Plus Languages'} Logo`,
-  }
+  },
+  {
+    url: '/og-image.jpg', // Fallback for platforms that don't support SVG
+    width: 1200,
+    height: 630,
+    alt: title || 'A Plus Languages',
+  },
 ];
 
 // Mapping for OpenGraph locales based on language
@@ -45,7 +51,7 @@ export const getBaseOpenGraph = (
   url: `https://www.apluslanguages.eu/${locale}`,
   title: title,
   description: description,
-  siteName: 'A Plus Languages | English and Spanish Classes | Personalized Language Learning',
+  siteName: 'A+ Languages | A Plus Languages | Personalized Language Learning',
   images: getOpenGraphImages(locale, title),
   // Add additional properties for better SEO
   alternateLocale: ['en_GB', 'es_ES', 'zh_CN', 'ja_JP', 'ko_KR'],
@@ -56,7 +62,10 @@ export const getBaseTwitter = (title: string, description: string): Twitter => (
   card: 'summary',
   title: title,
   description: description,
-  images: ['/images/aplus-logo.svg']
+  images: ['/images/aplus-logo.svg'],
+  // Add additional properties for better SEO
+  site: '@AplusLanguages',
+  creator: '@AplusLanguages',
 });
 
 // Base robot configuration with correct typing

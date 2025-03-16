@@ -38,8 +38,8 @@ export async function generateMetadata({
   const enhancedDescriptions = [
     description,
     `Professional personalized ${locale === 'es' ? 'Spanish and English' : 'English and Spanish'} classes with a native speaker teacher. Online lessons for companies and individuals.`,
-    `A Plus Languages (A+): ${locale === 'es' ? 'Spanish' : 'English'} classes for companies and individuals with certified native teacher. Personalized online lessons.`,
-    `A Plus Languages offers professional ${locale === 'es' ? 'Spanish' : 'English'} classes for companies. Personalized curriculum with a native speaker.`,
+    `A+ Languages: ${locale === 'es' ? 'Spanish' : 'English'} classes for companies and individuals with certified native teacher. Personalized online lessons.`,
+    `Aplus Languages offers professional ${locale === 'es' ? 'Spanish' : 'English'} classes for companies. Personalized curriculum with a native speaker.`,
   ];
 
   return {
@@ -88,9 +88,9 @@ export async function generateMetadata({
         ko: '/ko',
       },
     },
-    authors: [{ name: 'A Plus Languages - Native Speaker Teacher' }],
-    creator: 'A Plus Languages',
-    publisher: 'A Plus Languages',
+    authors: [{ name: 'A+ Languages - Native Speaker Teacher' }],
+    creator: 'A+ Languages',
+    publisher: 'A+ Languages',
     formatDetection: {
       email: false,
       address: false,
@@ -127,11 +127,11 @@ export async function generateMetadata({
     },
     openGraph: getBaseOpenGraph(
       locale,
-      `${title} - Professional ${locale === 'es' ? 'Spanish' : 'English'} Classes with Native Speaker`,
+      `${title} - ${locale === 'es' ? 'Spanish' : 'English'} Classes with Native Speaker`,
       enhancedDescriptions[1]
     ),
     twitter: getBaseTwitter(
-      `${title} - Professional ${locale === 'es' ? 'Spanish' : 'English'} Classes for Companies and Individuals`,
+      `${title} - Personalized ${locale === 'es' ? 'Spanish' : 'English'} Classes for Companies and Individuals`,
       enhancedDescriptions[2]
     ),
     robots: baseRobots,
