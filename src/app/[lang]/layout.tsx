@@ -98,30 +98,30 @@ export async function generateMetadata({
     },
     other: {
       preconnect: ['https://fonts.googleapis.com'],
-      manifest: 'https://www.apluslanguages.eu/manifest.json',
+      manifest: '/manifest.json',
       description1: enhancedDescriptions[1],
       description2: enhancedDescriptions[2],
       description3: enhancedDescriptions[3],
     },
     icons: {
-      icon: 'https://www.apluslanguages.eu/icon-192.png',
-      shortcut: 'https://www.apluslanguages.eu/icon-192.png',
-      apple: 'https://www.apluslanguages.eu/icon-192.png',
+      icon: '/icon-192.png',
+      shortcut: '/icon-192.png',
+      apple: '/icon-192.png',
       other: [
         {
           rel: 'apple-touch-icon-precomposed',
-          url: 'https://www.apluslanguages.eu/icon-192.png',
+          url: '/icon-192.png',
         },
         {
           rel: 'mask-icon',
-          url: 'https://www.apluslanguages.eu/safari-pinned-tab.svg',
+          url: '/safari-pinned-tab.svg',
           color: '#3b82f6',
         },
         {
           rel: 'icon',
           type: 'image/png',
           sizes: '512x512',
-          url: 'https://www.apluslanguages.eu/icon-512.png',
+          url: '/icon-512.png',
         },
       ],
     },

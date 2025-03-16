@@ -9,7 +9,7 @@ type Robots = NonNullable<Metadata['robots']>;
 // Reusable OpenGraph images to ensure consistent image metadata
 export const getOpenGraphImages = (locale: Locale, title: string) => [
   {
-    url: 'https://www.apluslanguages.eu/images/aplus-logo.svg',
+    url: '/images/aplus-logo.svg',
     width: 512,
     height: 512,
     alt: `${title || 'A Plus Languages'} Logo`,
@@ -56,7 +56,7 @@ export const getBaseTwitter = (title: string, description: string): Twitter => (
   card: 'summary',
   title: title,
   description: description,
-  images: ['https://www.apluslanguages.eu/images/aplus-logo.svg']
+  images: ['/images/aplus-logo.svg']
 });
 
 // Base robot configuration with correct typing

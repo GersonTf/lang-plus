@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   // - apple-icon.png (Apple touch icon)
   other: {
     preconnect: ['https://fonts.googleapis.com'],
-    manifest: 'https://www.apluslanguages.eu/manifest.json',
+    manifest: '/manifest.json',
     // Additional descriptions for better SEO
     description1:
       'Professional personalized English and Spanish classes with a native speaker teacher. Online lessons for companies and individuals.',
@@ -78,24 +78,24 @@ export const metadata: Metadata = {
       'Aplus Languages offers professional language classes for companies. Online lessons with native speaker teacher.',
   },
   icons: {
-    icon: 'https://www.apluslanguages.eu/icon-192.png',
-    shortcut: 'https://www.apluslanguages.eu/icon-192.png',
-    apple: 'https://www.apluslanguages.eu/icon-192.png',
+    icon: '/icon-192.png',
+    shortcut: '/icon-192.png',
+    apple: '/icon-192.png',
     other: [
       {
         rel: 'apple-touch-icon-precomposed',
-        url: 'https://www.apluslanguages.eu/icon-192.png',
+        url: '/icon-192.png',
       },
       {
         rel: 'mask-icon',
-        url: 'https://www.apluslanguages.eu/safari-pinned-tab.svg',
+        url: '/safari-pinned-tab.svg',
         color: '#3b82f6',
       },
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '512x512',
-        url: 'https://www.apluslanguages.eu/icon-512.png',
+        url: '/icon-512.png',
       },
     ],
   },
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     siteName: 'A+ Languages | English and Spanish Classes | Personalized Language Learning',
     images: [
       {
-        url: 'https://www.apluslanguages.eu/images/aplus-logo.svg',
+        url: '/images/aplus-logo.svg',
         width: 512,
         height: 512,
         alt: 'A Plus Languages Logo',
@@ -122,7 +122,7 @@ export const metadata: Metadata = {
     title: 'A+ Languages - Professional English and Spanish Classes',
     description:
       'A+ Languages: English and Spanish classes for companies with certified native teacher. Personalized online curriculum.',
-    images: ['https://www.apluslanguages.eu/images/aplus-logo.svg']
+    images: ['/images/aplus-logo.svg']
   },
   robots: {
     index: true,
@@ -215,7 +215,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#3b82f6" />
 
         {/* Web App Manifest */}
-        <link rel="manifest" href="https://www.apluslanguages.eu/manifest.json" />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body
         style={{
