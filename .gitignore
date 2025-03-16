@@ -10,6 +10,11 @@
 !.yarn/releases
 !.yarn/versions
 
+# npm (we're using Yarn now)
+package-lock.json
+.npmrc
+.npm
+
 # testing
 /coverage
 
@@ -40,3 +45,6 @@ yarn-error.log*
 next-env.d.ts
 
 *storybook.log
+
+# Keep yarn.lock that comes with Yarn Berry
+!yarn.lock

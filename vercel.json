@@ -11,5 +11,7 @@
       "destination": "https://www.apluslanguages.eu/$1",
       "permanent": true
     }
-  ]
+  ],
+  "buildCommand": "yarn build",
+  "installCommand": "yarn install"
 }
